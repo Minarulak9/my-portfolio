@@ -211,7 +211,7 @@ projectData.forEach((p,i)=>{
                         </div>
                     </div>
                 </div>`
-    projectContainer.insertAdjacentHTML('beforeend',html)
+    projectContainer?.insertAdjacentHTML('beforeend',html)
 })
 const achivementContainer = document.querySelector('.achivements');
 achivements.forEach((p,i)=>{
@@ -225,7 +225,7 @@ achivements.forEach((p,i)=>{
                         </div>
                     </div>
                 </div>`
-    achivementContainer.insertAdjacentHTML('beforeend',html)
+    achivementContainer?.insertAdjacentHTML('beforeend',html)
 })
 
 
