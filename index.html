@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinarulAk</title>
+    <link rel="shortcut icon" href="./img/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/media.css">
+    
+    <script src="./src/app.js" type="module" defer></script>
+</head>
+<body>
+    <div id="cursor"><img src="./img/cursor.webp" alt=""></div>
+    <div id="page1" class="night hide">
+        <img src="./img/light.svg" alt="" class="light page1_bg">
+        <img src="./img/night.svg" alt="" class="night page1_bg">
+        <div class="page1_box box">
+            <div class="texts">
+
+            </div>
+            <button class="skip_into_btn">Skip <i class="fa-solid fa-forward"></i></button>
+        </div>
+        <a href="https://wa.link/9qdrpl" class="connect" target="_blank" title="connect with me">
+            <img src="./img/connect.webp" class="wp_img" alt="">
+        </a>
+        <div class="image">
+            <img src="./img/tech_guy.webp" alt="" class="tech_guy">
+        </div>
+    </div>
+
+    <!-- fixed robot -->
+    <button class="help_btn" title="Click me to get help">
+        <img src="./img/cat.webp" alt="">
+    </button>
+    <div class="help_box">
+        <a class="setting_btn" href="javascript:void(0);"><i class="fa-solid fa-gear"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <!--  -->
+    <!--setting box  -->
+    <div id="settings">
+        <div class="row-btn">
+            <button class="setting_light">Light <i class="fa-solid fa-sun"></i></button>
+            <button class="setting_dark">Dark <i class="fa-solid fa-moon"></i></button>
+        </div>
+        <div class="row-btn">
+            <button class="setting_unmute">Unmute <i class="fa-solid fa-volume-high"></i></button>
+            <button class="setting_mute">Mute <i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
+        <div class="row-btn">
+            <button class="setting_clear">Clear Settings <i class="fa-solid fa-eraser"></i></button>
+        </div>
+    </div>
+
+    <!--  -->
+
+    <div id="app" class="">
+        <div class="hero">
+            <!-- stars -->
+            <div class="star1 star"></div>
+            <div class="star2 star"></div>
+            <div class="star3 star"></div>
+
+
+            <nav>
+                <a href="#" class="logo">
+                    <img src="./img/logo.webp" alt="">
+                </a>
+                <div class="email">
+                   <div class="icon"><i class="fa-regular fa-copy fa-fade"></i></div>
+                   <div class="value">minarulh34@gmail.com</div>
+                </div>
+            </nav>
+            <div class="vertical_center">
+                <div class="content" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="demo-up">
+                        <span class="server-status" type="up"></span>
+                        <span>Ready to take responsibility</span>
+                    </div>
+                    <h1 class="heading" >Front-End Devel<span class="o">o</span>per</h1>
+                    <p>My frontend expertise transcends aesthetics, delivering impactful user experiences. Elevate your projects with my passion for clean, purposeful design.</p>
+                    <p class="check-label">Check out my works</p>
+                    <a class="scroll_down" href="#project_section"><img src="./img/cursor.webp" alt=""></a>
+                </div>
+            </div>
+       </div>
+       <div id="project_section" class="pad">
+           <div class="projects ">
+              <!-- <div class="project" data-id="1">
+                   <img class="project_main_img" src="./img/projects/evpoint1.webp" alt="">
+                  <img class="project_logo" src="./img/projects/${p.logo}" alt="">
+                </div> --> 
+               
+            </div>
+        </div>
+       <!-- <div id="achivement_section" class="pad">
+        <p class="check-label text-center">My Achievements</p>
+           <div class="achivements">
+
+               
+            </div>
+        </div> -->
+    </div>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init();
+        var swiper = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    </script>
+</body>
+</html>
