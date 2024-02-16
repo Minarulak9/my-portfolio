@@ -136,17 +136,7 @@ const projectData = [
         projectStartDate:'13 Aug 2022',
         projectEndDate:'13 Aug 2022',
         images:['evpoint1.webp','evpoint2.webp','evpoint3.webp'],
-        liveLink:"www.google.com",
-        technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
-    },
-    {
-        title:"L-kaija",
-        logo:'lkaija_logo.webp',
-        desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nisi in eaque at quos excepturi ea repellendus repellat tempora est labore quasi nemo quo! Maiores natus perspiciatis ex illo dolores aliquid ducimus ratione ut quaerat inventore, corporis accusamus deserunt blanditiis.",
-        projectStartDate:'13 Aug 2023',
-        projectEndDate:'13 Aug 2023',
-        images:['lkaija1.webp','lkaija2.webp','lkaija3.webp'],
-        liveLink:"www.google.com",
+        liveLink:"https://minarulak9.github.io/evPoint_frontend/",
         technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
     },
     {
@@ -156,7 +146,7 @@ const projectData = [
         projectStartDate:'22 Dec 2022',
         projectEndDate:'22 Dec 2022',
         images:['indo1.webp','indo2.webp','indo3.webp'],
-        liveLink:"www.indomitechgroup.com",
+        liveLink:"https://indomitechgroup.com/",
         technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
     },
     {
@@ -166,17 +156,27 @@ const projectData = [
         projectStartDate:'22 Jul 2022',
         projectEndDate:'22 Jul 2022',
         images:['bank1.webp','bank2.webp','bank3.webp'],
-        liveLink:"www.indomitechgroup.com",
+        liveLink:"https://minarulak9.github.io/banking-application-with-js/",
         technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
     },
     {
-        title:"Jiomart Clone",
-        logo:'jiomart_logo.webp',
+        title:"L-kaija",
+        logo:'lkaija_logo.webp',
+        desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nisi in eaque at quos excepturi ea repellendus repellat tempora est labore quasi nemo quo! Maiores natus perspiciatis ex illo dolores aliquid ducimus ratione ut quaerat inventore, corporis accusamus deserunt blanditiis.",
+        projectStartDate:'13 Aug 2023',
+        projectEndDate:'13 Aug 2023',
+        images:['lkaija1.webp','lkaija2.webp','lkaija3.webp'],
+        liveLink:"https://lkaijatech.com/",
+        technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
+    },
+    {
+        title:"Explomart",
+        logo:'explomart_logo.webp',
         desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nisi in eaque at quos excepturi ea repellendus repellat tempora est labore quasi nemo quo! Maiores natus perspiciatis ex illo dolores aliquid ducimus ratione ut quaerat inventore, corporis accusamus deserunt blanditiis.",
         projectStartDate:'22 Dec 2022',
         projectEndDate:'22 Dec 2022',
-        images:['jiomart1.webp','jiomart2.webp','jiomart3.webp','jiomart4.webp'],
-        liveLink:"https://www.indomitechgroup.com",
+        images:['explomart1.webp','jiomart2.webp','jiomart3.webp','jiomart4.webp'],
+        liveLink:"https://dpbos.in/explomart/",
         technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
     },
     {
@@ -272,5 +272,14 @@ settingClear.addEventListener('click',()=>{
     window.location = './index.html'
 })
 
-
+// paralax effect
+const hero = document.querySelector('.hero')
+const heading = document.querySelector('.hero .heading')
+document.addEventListener('scroll',()=>{
+    if (window.screen.availHeight> window.scrollY) {
+        // hero.style.backgroundSize=`${100 + (Math.floor(window.scrollY) / 2)}%`;
+        heading.style.transform=`scale(${(1 * (Math.floor(window.scrollY) / 450)+1).toFixed(2)})`
+        console.log(window.scrollY);
+    }
+},{ passive: true })
 
