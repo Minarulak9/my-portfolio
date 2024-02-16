@@ -186,7 +186,7 @@ const projectData = [
         projectStartDate:'22 Sep 2023',
         projectEndDate:'22 Sep 2023',
         images:['cts1.webp','cts2.webp','cts3.webp','cts4.webp'],
-        liveLink:"www.indomitechgroup.com",
+        liveLink:"http://columbustechsolutions.com/",
         technologies:['HTML','CSS','Javascript','Leaflet Js Lib','Node Js','MongoDB','Express Js','Postman','Git & Github',]
     },
 ]

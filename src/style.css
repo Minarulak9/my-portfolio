@@ -500,6 +500,7 @@ nav .email{
     flex-direction: column;
     /* background: url(./../img/mak\ \(1\).webp) no-repeat right top/contain; */
     align-items: center;
+    background-attachment: fixed !important;
 }
 .hero .heading{
     font-size: 3.5rem;
@@ -799,7 +800,7 @@ span.o::before{
     font-weight: bold;
     text-align: center;
     padding: 10px 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
