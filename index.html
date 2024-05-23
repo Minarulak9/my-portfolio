@@ -1,128 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MinarulAk</title>
-    <link rel="shortcut icon" href="./img/logo.webp" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./src/style.css?v=1.0">
-    <link rel="stylesheet" href="./src/media.css?v=1.0">
-    
-    <script src="./src/app.js" type="module" defer></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Minarul Hoque || Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="./assets/img/logo.webp" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <div id="cursor"><img src="./img/cursor.webp" alt=""></div>
-    <div id="page1" class="night hide">
-        <img src="./img/light.svg" alt="" class="light page1_bg">
-        <img src="./img/night.svg" alt="" class="night page1_bg">
-        <div class="page1_box box">
-            <div class="texts">
 
-            </div>
-            <button class="skip_into_btn">Skip <i class="fa-solid fa-forward"></i></button>
-        </div>
-        <a href="https://wa.link/9qdrpl" class="connect" target="_blank" title="connect with me">
-            <img src="./img/connect.webp" class="wp_img" alt="">
-        </a>
-        <div class="image">
-            <img src="./img/tech_guy.webp" alt="" class="tech_guy">
-        </div>
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+      <a href="./"><img src="./assets/img/logo.webp" class="logo" alt=""></a>
+      <h1><a href="./">Minarul Hoque</a></h1>
+      <h2> <div class="pulsating-circle"></div> Front-End Developer</h2>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="#header">Home</a></li>
+          <li><a class="nav-link" href="#portfolio">Projects</a></li>
+          <li><a class="nav-link" href="#resume">Resume</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="social-links">
+        <a href="https://www.github.com/minarulak9/" target="_blank" class="github"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/minarulak9/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://wa.link/j8csap" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+        <a href="tel:+91 9002624058" class="call"><i class="bi bi-telephone"></i></a>
+      </div>
+
     </div>
+  </header><!-- End Header -->
 
-    <!-- fixed robot -->
-    <button class="help_btn" title="Click me to get help">
-        <img src="./img/cat.webp" alt="">
-    </button>
-    <div class="help_box">
-        <a class="setting_btn" href="javascript:void(0);"><i class="fa-solid fa-gear"></i></a>
-        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-    </div>
-    <!--  -->
-    <!--setting box  -->
-    <div id="settings">
-        <div class="row-btn">
-            <button class="setting_light">Light <i class="fa-solid fa-sun"></i></button>
-            <button class="setting_dark">Dark <i class="fa-solid fa-moon"></i></button>
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+
+    <!-- ======= About Me ======= -->
+    <div class="about-me container">
+
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Who Am I ?</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="assets/img/me.png" class="img-fluid" alt="">
         </div>
-        <div class="row-btn">
-            <button class="setting_unmute">Unmute <i class="fa-solid fa-volume-high"></i></button>
-            <button class="setting_mute">Mute <i class="fa-solid fa-volume-xmark"></i></button>
-        </div>
-        <div class="row-btn">
-            <button class="setting_clear">Clear Settings <i class="fa-solid fa-eraser"></i></button>
-        </div>
-    </div>
-
-    <!--  -->
-
-    <div id="app" class="">
-        <div class="under_construction">....I am working on it....</div>
-        <div class="hero">
-            <!-- stars -->
-            <div class="star1 star"></div>
-            <div class="star2 star"></div>
-            <div class="star3 star"></div>
-
-
-            <nav>
-                <a href="#" class="logo">
-                    <img src="./img/logo.webp" alt="">
-                </a>
-                <div class="email">
-                   <div class="icon"><i class="fa-regular fa-copy fa-fade"></i></div>
-                   <div class="value">minarulh34@gmail.com</div>
-                </div>
-            </nav>
-            <div class="vertical_center">
-                <div class="content" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="demo-up">
-                        <span class="server-status" type="up"></span>
-                        <span>Ready to take responsibility</span>
-                    </div>
-                    <h1 class="heading" >Front-End Devel<span class="o">o</span>per</h1>
-                    <p>My frontend expertise transcends aesthetics, delivering impactful user experiences. Elevate your projects with my passion for clean, purposeful design.</p>
-                    <p class="check-label">Check out my works</p>
-                    <a class="scroll_down" href="#project_section"><img src="./img/cursor.webp" alt=""></a>
-                </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>Front-End Developer</h3>
+          <p class="fst-italic">
+            My frontend expertise transcends aesthetics, delivering impactful user experiences. Elevate your projects with my passion for clean, purposeful design.
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>30 Sep 2002</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <a href="https://minarulak.online/" class="text-inherit">minarulak.online</a></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <a href="tel:+91 9002624058" class="text-inherit">+91 9002624058</a></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kolkata, West Bengal, India</span></li>
+              </ul>
             </div>
-       </div>
-       <div id="project_section" class="pad">
-           <div class="projects ">
-              <!-- <div class="project" data-id="1">
-                   <img class="project_main_img" src="./img/projects/evpoint1.webp" alt="">
-                  <img class="project_logo" src="./img/projects/${p.logo}" alt="">
-                </div> -->  
-               
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BCA</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>minarulh34@gmail.com</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+              </ul>
             </div>
+          </div>
+          <p>
+            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+          </p>
         </div>
-       <!-- <div id="achivement_section" class="pad">
-        <p class="check-label text-center">My Achievements</p>
-           <div class="achivements">
+      </div>
 
-               
+    </div><!-- End About Me -->
+
+    <!-- ======= Counts ======= -->
+    <!-- <div class="counts container">
+
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="count-box">
+            <i class="bi bi-emoji-smile"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+          <div class="count-box">
+            <i class="bi bi-journal-richtext"></i>
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projects</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="count-box">
+            <i class="bi bi-headset"></i>
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="count-box">
+            <i class="bi bi-award"></i>
+            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Awards</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div> -->
+    <!-- End Counts -->
+
+    <!-- ======= Skills  ======= -->
+    <div class="skills container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+
+      <div class="row skills-content">
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill">HTML <i class="val">98%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-        </div> -->
+          </div>
+
+          <div class="progress">
+            <span class="skill">CSS <i class="val">97%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">CSS Frameworks (Bootstrap, Tailwind) <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">Photoshop <i class="val">65%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">Video Editing <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">JavaScript (ES6, Jquery)<i class="val">87%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">React JS <i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill">C <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">Python <i class="val">80% (Row Python)</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">JAVA <i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">AI Tools (Prompt Engineering) <i class="val">93%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">Linix Based OS <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          
+
+        </div>
+
+      </div>
+
+    </div><!-- End Skills -->
+
+    <!-- ======= Interests ======= -->
+    <div class="interests container">
+
+      <div class="section-title">
+        <h2>Interests</h2>
+      </div>
+
+      <div class="row row-gap-3">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+              <i class="ri-brain-line" style="color: #ffbb2c;"></i>
+              <h3>Solving Real Problems</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+              <i class="ri-basketball-fill" style="color: #ffbb2c;"></i>
+              <h3>Cricket</h3>
+          </div>
+        </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-riding-fill" style="color: #5578ff;"></i>
+              <h3>Traveling</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-hand-heart-line" style="color: #e80368;"></i>
+              <h3>Helping Others</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-gamepad-line" style="color: #28a745;"></i>
+              <h3>Video Games</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-camera-line" style="color: #f85a40;"></i>
+              <h3>Photography</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-book-line" style="color: #ff8c00;"></i>
+              <h3>Book Reading</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-run-line" style="color: #ff1493;"></i>
+              <h3>Gymnastics</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-discuss-line" style="color: #20b2aa;"></i>
+              <h3>Informative Conversations</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-movie-line" style="color: #4169e1;"></i>
+              <h3>Watching Movies</h3>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+              <i class="ri-music-line" style="color: #ff4500;"></i>
+              <h3>Listening to Music</h3>
+          </div>
+      </div>
+      
+      </div>
+
+    </div><!-- End Interests -->
+
+
+  </section><!-- End About Section -->
+
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Check My Resume</p>
+        <a href="./assets/cv/cv.pdf">Resume (PDF)</a>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="resume-title">Sumary</h3>
+          <div class="resume-item pb-0">
+            <h4>Minarul Hoque</h4>
+            <p><em>A dedicated Frontend Developer with over 2 years of experience in creating dynamic, user-friendly websites and applications. Proficient in JavaScript, React.js, and various web technologies, with a strong foundation in backend integration. Adept at working in fast-paced environments and collaborating with international clients.</em></p>
+            <p>
+            <ul>
+              <li>Kolkata, West Bengal, India</li>
+              <li><a href="tel:+91 9002624058" class="text-inherit">+91 9002624058</a></li>
+              <li><a href="mailto:minarulh34@gmail.com" class="text-inherit">minarulh34@gmail.com</a></li>
+            </ul>
+            </p>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            <h4>Bachelor of Computer Application (BCA)</h4>
+            <h5>2021 - 2024</h5>
+            <p><em>JIS College of Engineering, Kalyani</em></p>
+            <p>SGPA: 8.34 (Till 5th semester)</p>
+          </div>
+          <div class="resume-item">
+            <h4>Higher Secondary (WBCHSE)</h4>
+            <h5>2021</h5>
+            <p><em>Amaipur Miloni High Madrasah (H.S), Amaipur, West Bengal</em></p>
+            <p>Percentage: 76.80%</p>
+        </div>
+        <div class="resume-item">
+          <h4>Diploma In Information Technology Application (DITA)</h4>
+          <h5>2020</h5>
+          <p><em>Youth Computer Training Centre, Nalhati, West Bengal</em></p>
+          <p>Percentage: 89.00%</p>
+      </div>
+        <div class="resume-item">
+            <h4>Secondary (WBBME)</h4>
+            <h5>2019</h5>
+            <p><em>Amaipur Miloni High Madrasah,  Amaipur, West Bengal</em></p>
+            <p>Percentage: 73.12%</p>
+        </div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="resume-title">Professional Experience</h3>
+          <div class="resume-item">
+            <h4>Frontend Developer</h4>
+            <h5>2022 - 2024</h5>
+            <p><em>Indomitech Group, Sodepur, Kolkata,
+              West-Bengal </em></p>
+            <p>
+              <ul>
+                <li>Developed Indomitech Group's official website, increasing user engagement by 20%.</li>
+              <li>Designed and implemented 15+ user-friendly, responsive websites.</li>
+              <li>Developed a fully functional e-commerce site with 30+ features.</li>
+              <li>Contributed to 20% of server-side logic, collaborating with backend developers.</li>
+              <li>Managed projects with international clients, ensuring clear and effective communication.</li>
+            </ul>
+            </p>
+          </div>
+          <h3 class="resume-title">Certifications & Awards</h3>
+            <div class="resume-item">
+              <h4>JavaScript Certification</h4>
+              <p><em>Udemy - Jan 09, 2023</em></p>
+              <h5><a href="https://www.udemy.com/certificate/UC-7837aae9-2ee6-4dfe-b808-28809e4ac2af/" target="_blank">Certificate</a></h5>
+          </div>
+          <div class="resume-item">
+            <h4>JavaScript Algorithms & Data Structures</h4>
+            <p><em>FreeCodeCamp - Apr 18, 2022</em></p>
+            <h5><a href="https://www.freecodecamp.org/certification/minarulak/javascript-algorithms-and-data-structures" target="_blank">Certificate</a></h5>
+        </div>
+        
+        <div class="resume-item">
+            <h4>Technical Support Fundamentals</h4>
+            <p><em>Google - Jun 28, 2021</em></p>
+            <h5><a href="https://www.coursera.org/account/accomplishments/certificate/AGX5PRBLR6MS" target="_blank">Certificate</a></h5>
+        </div>
+        
+        <div class="resume-item">
+            <h4>JIS Tech 2k22</h4>
+            <p><em>Annual Tech Fest - 1st Position in Department</em></p>
+        </div>
+        </div>
+      </div>
+
     </div>
+  </section><!-- End Resume Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Projects</h2>
+        <p>My Works</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-21-24">2021-24</li>
+            <!-- <li data-filter=".filter-card">Card</li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/evpoint1.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>evPoint</h4>
+              <p>Full Stack Application</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/evpoint1.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="A full stack application (HTML, CSS, Bootstrap, JS, MongoDB, Express.js, Node.js) to locate nearest EV charging station and get shortest direction to visit there and multiple map feature implemented."><i class="bx bx-plus"></i></a>
+                <a href="https://minarulak9.github.io/evPoint_frontend/" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/bank1.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Bankist</h4>
+              <p>Frontend Funtional Application </p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/bank1.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="A Javascript funtional application with multiple banking related features like money transfer, loan request, account create/close."><i class="bx bx-plus"></i></a>
+                <a href="https://minarulak9.github.io/banking-application-with-js/" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/indomitech.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Indomitech Group Website</h4>
+              <p>Landing Page for IT Company</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/indomitech.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="
+                Designed and developed the landing page for Indomitech Group, a leading IT company. The site features a modern design, intuitive navigation, and responsive layout, showcasing the company's services and expertise. "><i class="bx bx-plus"></i></a>
+                <a href="https://indomitechgroup.com/" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/shopsera.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Shopsera: An E-commerce Website</h4>
+              <p>Fully Functional E-commerce Website</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/shopsera.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="I contributed to ShopSera, an innovative e-commerce platform, by focusing on frontend development. I implemented a responsive user interface, ensuring a seamless shopping experience. Technologies used include HTML, CSS, JavaScript, and Bootstrap."><i class="bx bx-plus"></i></a>
+                <a href="https://shopsera.co.in/" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/admin.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Admin Panel </h4>
+              <p>Responsive Admin Panel</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/admin1.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Custom responsive admin panel design"><i class="bx bx-plus"></i></a>
+                <!-- <a href="https://shopsera.co.in/" target="_blank"><i class="bx bx-link"></i></a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/intlum.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Landing Page Website</h4>
+              <p>Clean and responsive website</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/intlum.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
+                <a href="https://minarulak9.github.io/intlum_test/" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/countryX.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Country X</h4>
+              <p>A website listing All the counties</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/countryX.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Experience global exploration with my web app, using HTML, CSS, JavaScript, and third-party APIs. Browse comprehensive country data, dive into individual profiles, and utilize powerful search functionality. Responsive design ensures seamless interaction. Explore the world effortlessly with the Interactive World Explorer."><i class="bx bx-plus"></i></a>
+                <a href="https://minarulak9.github.io/CountryX/" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/cal.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Windows 10 Calculator</h4>
+              <p>Windows 10 Calculator Clone</p>
+              <div class="portfolio-links">
+                <a href="assets/img/projects/cal.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design and Developed windows 10 Calculator clone using HTML & CSS"><i class="bx bx-plus"></i></a>
+                <a href="https://minarulak9.github.io/windows-10-calculator-copy-" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-21-24">
+          <div class="portfolio-wrap">
+            <img src="assets/img/projects/yt.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Youtube Clone</h4>
+              <!-- <p>A website listing All the counties</p> -->
+              <div class="portfolio-links">
+                <a href="assets/img/projects/yt.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Youtube Clone using html and css"><i class="bx bx-plus"></i></a>
+                <a href="https://minarulak9.github.io/clone_youtube.github.io" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- End Portfolio Section -->
+  
+  <!-- ======= Contact Section ======= -->
+  
 
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        AOS.init();
-        var swiper = new Swiper(".mySwiper", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-    </script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
