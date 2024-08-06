@@ -1233,3 +1233,7 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+.my-img{
+  filter: grayscale(1) contrast(1.2) saturate(2.1) ;
+  border-radius: 5px;
+}

@@ -195,5 +195,21 @@
     height: '90vh'
   });
 
- 
+function calculateAge(dob) {
+  const dobDate = new Date(dob);
+  const currentDate = new Date();
+  let age = currentDate.getFullYear() - dobDate.getFullYear();
+  const monthDifference = currentDate.getMonth() - dobDate.getMonth();
+  const dayDifference = currentDate.getDate() - dobDate.getDate();
+
+  // Adjust age if the current date is before the birth date in the year
+  if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+      age--;
+  }
+
+  return age;
+}
+const dob = '2002-09-30';
+const age = calculateAge(dob);
+document.getElementById('age').textContent = age;
 })()
