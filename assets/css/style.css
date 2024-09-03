@@ -1022,10 +1022,24 @@ section .container {
   font-size: 15px;
   padding: 15px 0 0 0;
 }
-
+.mobile-links{
+  display: none;
+}
 @media (max-width: 992px) {
   .portfolio-details .portfolio-info {
     padding-top: 20px;
+  }
+  .mobile-links{
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    padding: 0;
+  }
+  .mobile-links .nav-link {
+    background: #1d1d1d;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
   }
 }
 
@@ -1237,3 +1251,4 @@ section .container {
   filter: grayscale(1) contrast(1.2) saturate(2.1) ;
   border-radius: 5px;
 }
+
