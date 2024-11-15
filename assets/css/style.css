@@ -1252,3 +1252,38 @@ section .container {
   border-radius: 5px;
 }
 
+.animate.active{
+  animation: none;
+}
+.animate{
+  animation: blink 1s linear 2s infinite;
+}
+@keyframes blink {
+  0%{
+    color: rgb(179, 179, 179);
+    transform: scale(1);
+  }
+  20%{
+    color: #ffffff;
+    transform: scale(1.2) rotate(5deg);
+  }
+  25%{
+    transform: scale(1.2) rotate(-5deg);
+  }
+  30%{
+    transform: scale(1.2) rotate(5deg);
+  }
+  35%{
+    transform: scale(1.2) rotate(-5deg);
+  }
+  40%{
+    transform: scale(1.2) rotate(5deg);
+  }
+  45%{
+    transform: scale(1.2) rotate(-5deg);
+  }
+  100%{
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+}
