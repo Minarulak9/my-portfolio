@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Recursion Visualizer - Under The Hood</title>
+    
+    <!-- External Libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">
+                <span class="title-icon">🔄</span>
+                Deep Recursion Visualizer
+            </h1>
+            <p class="subtitle">Understanding Recursion Under The Hood</p>
+            
+            <!-- Level Selector -->
+            <div class="level-selector">
+                <button class="level-btn active" data-level="basic">
+                    <span class="level-icon">🌱</span>
+                    <span class="level-name">Basic</span>
+                    <span class="level-desc">Simple & Visual</span>
+                </button>
+                <button class="level-btn" data-level="moderate">
+                    <span class="level-icon">🌿</span>
+                    <span class="level-name">Moderate</span>
+                    <span class="level-desc">Intermediate Concepts</span>
+                </button>
+                <button class="level-btn" data-level="deep">
+                    <span class="level-icon">🌳</span>
+                    <span class="level-name">Deep</span>
+                    <span class="level-desc">Complete Analysis</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container" data-level="basic">
+        <!-- Left Panel - Controls & Code -->
+        <aside class="left-panel">
+            <!-- Example Selector -->
+            <section class="control-section" data-show-level="all">
+                <h2 class="section-title">Select Example</h2>
+                <div class="example-selector">
+                    <button class="example-btn active" data-example="factorial" data-level="basic">Factorial</button>
+                    <button class="example-btn" data-example="fibonacci" data-level="moderate">Fibonacci</button>
+                    <button class="example-btn" data-example="tower" data-level="deep">Tower of Hanoi</button>
+                    <button class="example-btn" data-example="binary" data-level="moderate">Binary Search</button>
+                    <button class="example-btn" data-example="merge" data-level="deep">Merge Sort</button>
+                    <button class="example-btn" data-example="power" data-level="basic">Power Function</button>
+                </div>
+            </section>
+
+            <!-- Code Editor -->
+            <section class="control-section" data-show-level="moderate,deep">
+                <h2 class="section-title">C Code</h2>
+                <div class="code-editor-wrapper">
+                    <pre><code id="codeDisplay" class="language-c"></code></pre>
+                    <button id="editCodeBtn" class="edit-btn" data-show-level="deep">✏️ Edit Code</button>
+                </div>
+                <textarea id="codeEditor" class="code-textarea" style="display: none;"></textarea>
+                <div id="codeControls" style="display: none;" class="code-controls">
+                    <button id="saveCodeBtn" class="btn btn-primary">💾 Save</button>
+                    <button id="cancelCodeBtn" class="btn btn-secondary">❌ Cancel</button>
+                </div>
+            </section>
+
+            <!-- Input Parameters -->
+            <section class="control-section" data-show-level="all">
+                <h2 class="section-title">Parameters</h2>
+                <div id="parameterInputs" class="parameter-inputs"></div>
+            </section>
+
+            <!-- Execution Controls -->
+            <section class="control-section" data-show-level="all">
+                <h2 class="section-title">Execution Controls</h2>
+                <div class="execution-controls">
+                    <button id="runBtn" class="btn btn-success">▶️ Run</button>
+                    <button id="stepBtn" class="btn btn-primary" data-show-level="moderate,deep">⏭️ Step</button>
+                    <button id="pauseBtn" class="btn btn-warning" disabled data-show-level="moderate,deep">⏸️ Pause</button>
+                    <button id="resetBtn" class="btn btn-danger">🔄 Reset</button>
+                </div>
+                
+                <div class="speed-control">
+                    <label for="speedSlider">Animation Speed:</label>
+                    <input type="range" id="speedSlider" min="100" max="2000" value="1200" step="100">
+                    <span id="speedValue">1200ms</span>
+                </div>
+            </section>
+
+            <!-- Visualization Options -->
+            <section class="control-section" data-show-level="moderate,deep">
+                <h2 class="section-title">Visualization Options</h2>
+                <div class="viz-options">
+                    <label class="checkbox-label" data-show-level="moderate,deep">
+                        <input type="checkbox" id="showMemory" checked>
+                        <span>Show Memory Details</span>
+                    </label>
+                    <label class="checkbox-label" data-show-level="deep">
+                        <input type="checkbox" id="show3D" checked>
+                        <span>3D Stack View</span>
+                    </label>
+                    <label class="checkbox-label" data-show-level="all">
+                        <input type="checkbox" id="showCallTree" checked>
+                        <span>Call Tree</span>
+                    </label>
+                    <label class="checkbox-label" data-show-level="moderate,deep">
+                        <input type="checkbox" id="showTimeline" checked>
+                        <span>Timeline View</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="control-section" data-show-level="all">
+                <h2 class="section-title">Statistics</h2>
+                <div id="statistics" class="statistics">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Calls:</span>
+                        <span class="stat-value" id="totalCalls">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Max Depth:</span>
+                        <span class="stat-value" id="maxDepth">0</span>
+                    </div>
+                    <div class="stat-item" data-show-level="moderate,deep">
+                        <span class="stat-label">Current Depth:</span>
+                        <span class="stat-value" id="currentDepth">0</span>
+                    </div>
+                    <div class="stat-item" data-show-level="deep">
+                        <span class="stat-label">Memory Used:</span>
+                        <span class="stat-value" id="memoryUsed">0 bytes</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Center Panel - Main Visualization -->
+        <main class="center-panel">
+            <!-- Tabs -->
+            <div class="viz-tabs">
+                <button class="tab-btn active" data-tab="stack" data-show-level="all">Call Stack</button>
+                <button class="tab-btn" data-tab="tree" data-show-level="all">Call Tree</button>
+                <button class="tab-btn" data-tab="3d" data-show-level="deep">3D View</button>
+                <button class="tab-btn" data-tab="timeline" data-show-level="moderate,deep">Timeline</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="stackTab">
+                <div id="callStack" class="visualization-area"></div>
+            </div>
+
+            <div class="tab-content" id="treeTab">
+                <div id="callTree" class="visualization-area"></div>
+            </div>
+
+            <div class="tab-content" id="3dTab">
+                <div id="stack3D" class="visualization-area"></div>
+            </div>
+
+            <div class="tab-content" id="timelineTab">
+                <div id="timeline" class="visualization-area"></div>
+            </div>
+
+            <!-- Current Execution Info -->
+            <div class="execution-info">
+                <div class="info-panel">
+                    <h3>Current Execution</h3>
+                    <div id="currentExecution" class="current-exec-details">
+                        <p>Click "Run" to start visualization</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Panel - Insights & Explanation -->
+        <aside class="right-panel">
+            <!-- Live Console -->
+            <section class="control-section" data-show-level="all">
+                <h2 class="section-title">Console Output</h2>
+                <div id="console" class="console"></div>
+                <button id="clearConsole" class="btn btn-small">Clear</button>
+            </section>
+
+            <!-- Memory Breakdown -->
+            <section class="control-section" data-show-level="moderate,deep">
+                <h2 class="section-title">Memory Stack Detail</h2>
+                <div id="memoryDetail" class="memory-detail"></div>
+            </section>
+
+            <!-- Explanation -->
+            <section class="control-section" data-show-level="all">
+                <h2 class="section-title">Understanding Recursion</h2>
+                <div id="explanation" class="explanation">
+                    <div class="explanation-content">
+                        <h3>What is Recursion?</h3>
+                        <p>Recursion is when a function calls itself to solve a problem by breaking it down into smaller subproblems.</p>
+                        
+                        <h3>Key Concepts:</h3>
+                        <ul>
+                            <li><strong>Base Case:</strong> The condition that stops recursion</li>
+                            <li><strong>Recursive Case:</strong> The function calling itself</li>
+                            <li data-show-level="moderate,deep"><strong>Call Stack:</strong> Memory structure storing function calls</li>
+                            <li data-show-level="deep"><strong>Stack Frame:</strong> Memory allocated for each function call</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Complexity Analysis -->
+            <section class="control-section" data-show-level="moderate,deep">
+                <h2 class="section-title">Complexity Analysis</h2>
+                <div id="complexity" class="complexity-info">
+                    <div class="complexity-item">
+                        <span class="complexity-label">Time Complexity:</span>
+                        <span class="complexity-value" id="timeComplexity">-</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span class="complexity-label">Space Complexity:</span>
+                        <span class="complexity-value" id="spaceComplexity">-</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Deep Recursion Visualizer - Understanding the Call Stack Under The Hood</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/recursion-examples.js"></script>
+    <script src="./js/level-manager.js"></script>
+    <script src="./js/tutorial-system.js"></script>
+    <script src="./js/stack-visualizer.js"></script>
+    <script src="./js/tree-visualizer.js"></script>
+    <script src="./js/3d-visualizer.js"></script>
+    <script src="./js/timeline-visualizer.js"></script>
+    <script src="./js/recursion-engine.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

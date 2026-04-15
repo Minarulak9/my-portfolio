@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Animation Playground - Interactive Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- D3.js for network visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Anime.js for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🌐</span>
+                    Network Playground
+                </h1>
+                <div class="header-controls">
+                    <button class="btn btn-secondary" id="toggleSidebar">
+                        <span class="icon">☰</span> Menu
+                    </button>
+                    <button class="btn btn-primary" id="toggleInfo">
+                        <span class="icon">ℹ️</span> Info
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <h2 class="sidebar-title">Network Types</h2>
+                
+                <!-- Network Type Selection -->
+                <div class="network-types">
+                    <button class="network-btn active" data-network="lan">
+                        <span class="network-icon">🏠</span>
+                        <span class="network-name">LAN</span>
+                        <span class="network-desc">Local Area Network</span>
+                    </button>
+                    <button class="network-btn" data-network="wan">
+                        <span class="network-icon">🌍</span>
+                        <span class="network-name">WAN</span>
+                        <span class="network-desc">Wide Area Network</span>
+                    </button>
+                    <button class="network-btn" data-network="internet">
+                        <span class="network-icon">☁️</span>
+                        <span class="network-name">Internet</span>
+                        <span class="network-desc">Global Network</span>
+                    </button>
+                    <button class="network-btn" data-network="clientserver">
+                        <span class="network-icon">🖥️</span>
+                        <span class="network-name">Client-Server</span>
+                        <span class="network-desc">Request-Response Model</span>
+                    </button>
+                    <button class="network-btn" data-network="p2p">
+                        <span class="network-icon">🔗</span>
+                        <span class="network-name">Peer-to-Peer</span>
+                        <span class="network-desc">Decentralized Network</span>
+                    </button>
+                    <button class="network-btn" data-network="mesh">
+                        <span class="network-icon">🕸️</span>
+                        <span class="network-name">Mesh</span>
+                        <span class="network-desc">Interconnected Nodes</span>
+                    </button>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <h2 class="sidebar-title">Protocols & Layers</h2>
+                <div class="protocol-list">
+                    <button class="protocol-btn" data-protocol="tcp">
+                        TCP/IP
+                    </button>
+                    <button class="protocol-btn" data-protocol="http">
+                        HTTP/HTTPS
+                    </button>
+                    <button class="protocol-btn" data-protocol="dns">
+                        DNS
+                    </button>
+                    <button class="protocol-btn" data-protocol="osi">
+                        OSI Model
+                    </button>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <h2 class="sidebar-title">Simulation Controls</h2>
+                <div class="control-group">
+                    <label class="control-label">
+                        <span>Animation Speed</span>
+                        <input type="range" id="speedControl" min="0.5" max="3" step="0.5" value="1">
+                        <span class="speed-value">1x</span>
+                    </label>
+                    
+                    <label class="control-label">
+                        <span>Packet Size</span>
+                        <input type="range" id="packetSize" min="1" max="10" step="1" value="5">
+                        <span class="packet-value">5</span>
+                    </label>
+
+                    <label class="control-label checkbox-label">
+                        <input type="checkbox" id="showLabels" checked>
+                        <span>Show Labels</span>
+                    </label>
+
+                    <label class="control-label checkbox-label">
+                        <input type="checkbox" id="showPackets" checked>
+                        <span>Show Packets</span>
+                    </label>
+
+                    <label class="control-label checkbox-label">
+                        <input type="checkbox" id="showLatency" checked>
+                        <span>Show Latency</span>
+                    </label>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-success" id="startSimulation">
+                        ▶️ Start
+                    </button>
+                    <button class="btn btn-warning" id="pauseSimulation">
+                        ⏸️ Pause
+                    </button>
+                    <button class="btn btn-danger" id="resetSimulation">
+                        🔄 Reset
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Canvas Area -->
+        <main class="main-content" id="mainContent">
+            <div class="canvas-wrapper">
+                <svg id="networkCanvas" class="network-canvas"></svg>
+                
+                <!-- Interactive Overlay -->
+                <div class="canvas-overlay" id="canvasOverlay"></div>
+                
+                <!-- Stats Panel -->
+                <div class="stats-panel" id="statsPanel">
+                    <div class="stat-item">
+                        <span class="stat-label">Packets Sent:</span>
+                        <span class="stat-value" id="packetsSent">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Active Connections:</span>
+                        <span class="stat-value" id="activeConnections">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Avg Latency:</span>
+                        <span class="stat-value" id="avgLatency">0ms</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Data Transferred:</span>
+                        <span class="stat-value" id="dataTransferred">0 KB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device Details Panel (Hidden by default) -->
+            <div class="device-panel" id="devicePanel">
+                <button class="close-btn" id="closeDevicePanel">×</button>
+                <h3 class="device-title" id="deviceTitle">Device Details</h3>
+                <div class="device-info" id="deviceInfo"></div>
+            </div>
+        </main>
+
+        <!-- Info Panel (Right Side) -->
+        <aside class="info-panel" id="infoPanel">
+            <div class="info-content">
+                <button class="close-btn" id="closeInfoPanel">×</button>
+                <h2 class="info-title" id="infoTitle">Network Information</h2>
+                <div class="info-body" id="infoBody">
+                    <p>Select a network type or click on devices to learn more about networking concepts.</p>
+                </div>
+
+                <!-- Real-life Analogies Section -->
+                <div class="analogies-section">
+                    <h3 class="analogies-title">🎯 Real-Life Analogy</h3>
+                    <div class="analogy-content" id="analogyContent">
+                        <p>Select a network type to see how it relates to everyday situations.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3 class="quick-actions-title">Try These:</h3>
+                    <div class="action-chips" id="actionChips">
+                        <button class="chip-btn" data-action="send-packet">Send Packet</button>
+                        <button class="chip-btn" data-action="add-device">Add Device</button>
+                        <button class="chip-btn" data-action="simulate-congestion">Network Congestion</button>
+                        <button class="chip-btn" data-action="simulate-failure">Device Failure</button>
+                        <button class="chip-btn" data-action="show-route">Show Route</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+
+        <!-- Context Menu -->
+        <div class="context-menu" id="contextMenu">
+            <button class="context-item" data-action="send-data">Send Data</button>
+            <button class="context-item" data-action="inspect">Inspect Device</button>
+            <button class="context-item" data-action="disconnect">Disconnect</button>
+            <button class="context-item" data-action="remove">Remove Device</button>
+        </div>
+
+        <!-- Modal for Detailed Explanations -->
+        <div class="modal" id="explanationModal">
+            <div class="modal-content">
+                <button class="close-btn" id="closeModal">×</button>
+                <h2 class="modal-title" id="modalTitle">Detailed Explanation</h2>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="closeModalBtn">Got it!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loader"></div>
+            <p>Initializing Network...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="networkData.js"></script>
+    <script src="networkVisualizer.js"></script>
+    <script src="animations.js"></script>
+    <script src="interactions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

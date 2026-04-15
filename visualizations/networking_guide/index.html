@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Networking Devices Guide</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fas fa-network-wired"></i>
+            <span>Network Hub</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#intro" class="nav-link active" data-section="0">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a></li>
+            <li><a href="#bridge" class="nav-link" data-section="1">
+                <i class="fas fa-bridge"></i>
+                <span>Bridge</span>
+            </a></li>
+            <li><a href="#router" class="nav-link" data-section="2">
+               <i class="fa-solid fa-wifi"></i>
+                <span>Router</span>
+            </a></li>
+            <li><a href="#switch" class="nav-link" data-section="3">
+                <i class="fas fa-server"></i>
+                <span>Switch</span>
+            </a></li>
+            <li><a href="#gateway" class="nav-link" data-section="4">
+                <i class="fas fa-door-open"></i>
+                <span>Gateway</span>
+            </a></li>
+            <li><a href="#firewall" class="nav-link" data-section="5">
+                <i class="fas fa-shield-alt"></i>
+                <span>Firewall</span>
+            </a></li>
+            <li><a href="#vpn" class="nav-link" data-section="6">
+                <i class="fas fa-lock"></i>
+                <span>VPN</span>
+            </a></li>
+            <li><a href="#subnet" class="nav-link" data-section="7">
+                <i class="fas fa-sitemap"></i>
+                <span>Subnet</span>
+            </a></li>
+        </ul>
+        
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Section 0: Introduction -->
+        <section class="slide intro-slide" id="intro" data-section="0">
+            <div class="container">
+                <h1 class="section-title">Network Devices Interactive Guide</h1>
+                <p class="section-subtitle">Learn networking concepts through interactive visualizations</p>
+                
+                <div id="osiStackViz" class="osi-stack-container"></div>
+                
+                <div class="intro-features">
+                    <div class="feature-card">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>Interactive</h3>
+                        <p>Play with live simulations</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Easy to Learn</h3>
+                        <p>Step-by-step explanations</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Visual</h3>
+                        <p>Animated diagrams</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Bridge -->
+        <section class="slide bridge-slide" id="bridge" data-section="1">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">Layer 2 - Data Link</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-bridge"></i>
+                        Bridge
+                    </h2>
+                    <p class="section-subtitle">Connecting Network Segments</p>
+                </div>
+
+                <div class="content-layout">
+                    <!-- Explanation -->
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a Bridge?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>Bridge</strong> is like a smart traffic controller for your network. Imagine you have two neighborhoods (network segments) and a bridge connecting them.</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Think of a bridge between two islands. It learns which people live on which island and only lets cars cross when they need to visit the other island.</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Listens:</strong> Watches all data frames passing through</li>
+                                <li><strong>Learns:</strong> Remembers which devices (MAC addresses) are on which side</li>
+                                <li><strong>Filters:</strong> Only forwards frames that need to cross to the other segment</li>
+                                <li><strong>Forwards:</strong> Sends data to the correct destination</li>
+                            </ol>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Key Features:</h4>
+                                <ul>
+                                    <li>✓ Reduces network collisions</li>
+                                    <li>✓ Learns MAC addresses automatically</li>
+                                    <li>✓ Operates at Layer 2 (Data Link)</li>
+                                    <li>✓ Transparent to devices (they don't know it exists)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Playground -->
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="bridgeSimulation" class="simulation-area"></div>
+                            
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="bridgeDemo.sendPacket('PC-A', 'PC-B')">
+                                    <i class="fas fa-paper-plane"></i> Send PC-A → PC-B
+                                </button>
+                                <button class="control-btn" onclick="bridgeDemo.sendPacket('PC-C', 'PC-D')">
+                                    <i class="fas fa-paper-plane"></i> Send PC-C → PC-D
+                                </button>
+                                <button class="control-btn" onclick="bridgeDemo.sendPacket('PC-A', 'PC-D')">
+                                    <i class="fas fa-exchange-alt"></i> Send PC-A → PC-D (Cross Bridge)
+                                </button>
+                                <button class="control-btn reset-btn" onclick="bridgeDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="mac-table">
+                                <h4><i class="fas fa-table"></i> Bridge MAC Address Table</h4>
+                                <div id="macTable" class="table-content">
+                                    <div class="table-row header">
+                                        <span>Port</span>
+                                        <span>MAC Address</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Click buttons to send packets and watch the bridge learn!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real-World Applications -->
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-building"></i>
+                            <h4>Office Networks</h4>
+                            <p>Connecting different floors in a building</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-warehouse"></i>
+                            <h4>Industrial Sites</h4>
+                            <p>Linking production areas</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-school"></i>
+                            <h4>Campus Networks</h4>
+                            <p>Connecting multiple buildings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Router -->
+        <section class="slide router-slide" id="router" data-section="2">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">Layer 3 - Network</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-router"></i>
+                        Router
+                    </h2>
+                    <p class="section-subtitle">Intelligent Path Finder</p>
+                </div>
+
+                <div class="content-layout">
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a Router?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>Router</strong> is the GPS of your network! It finds the best path for data to travel between different networks.</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Like a postal sorting center that reads ZIP codes and decides which delivery truck should carry each package to reach different cities.</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Receives Packet:</strong> Gets data with destination IP address</li>
+                                <li><strong>Checks Routing Table:</strong> Looks up the best path to destination</li>
+                                <li><strong>Makes Decision:</strong> Chooses optimal route based on various factors</li>
+                                <li><strong>Forwards:</strong> Sends packet to next router or destination</li>
+                            </ol>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Key Features:</h4>
+                                <ul>
+                                    <li>✓ Connects different networks (e.g., your home to internet)</li>
+                                    <li>✓ Uses IP addresses for routing</li>
+                                    <li>✓ Can filter traffic with ACLs</li>
+                                    <li>✓ Provides NAT (Network Address Translation)</li>
+                                    <li>✓ Supports multiple routing protocols (OSPF, BGP, RIP)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="routerSimulation" class="simulation-area"></div>
+                            
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="routerDemo.sendPacket('192.168.1.10', '192.168.1.20')">
+                                    <i class="fas fa-network-wired"></i> Send within Network A
+                                </button>
+                                <button class="control-btn" onclick="routerDemo.sendPacket('192.168.1.10', '10.0.0.5')">
+                                    <i class="fas fa-route"></i> Send to Network B
+                                </button>
+                                <button class="control-btn" onclick="routerDemo.sendPacket('192.168.1.10', '8.8.8.8')">
+                                    <i class="fas fa-globe"></i> Send to Internet
+                                </button>
+                                <button class="control-btn reset-btn" onclick="routerDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="routing-table">
+                                <h4><i class="fas fa-table"></i> Routing Table</h4>
+                                <div id="routingTable" class="table-content">
+                                    <div class="table-row header">
+                                        <span>Destination</span>
+                                        <span>Next Hop</span>
+                                        <span>Interface</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span>192.168.1.0/24</span>
+                                        <span>Direct</span>
+                                        <span>eth0</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span>10.0.0.0/24</span>
+                                        <span>Direct</span>
+                                        <span>eth1</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span>0.0.0.0/0</span>
+                                        <span>Gateway</span>
+                                        <span>eth2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Watch how the router decides the path based on destination IP!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-home"></i>
+                            <h4>Home/Office</h4>
+                            <p>Connecting to ISP and internet</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-server"></i>
+                            <h4>Enterprise</h4>
+                            <p>Inter-department network routing</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-cloud"></i>
+                            <h4>ISP Core</h4>
+                            <p>Internet backbone routing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Switch -->
+        <section class="slide switch-slide" id="switch" data-section="3">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">Layer 2 - Data Link</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-server"></i>
+                        Switch
+                    </h2>
+                    <p class="section-subtitle">The Network Traffic Director</p>
+                </div>
+
+                <div class="content-layout">
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a Switch?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>Switch</strong> is like an intelligent traffic controller that creates direct highways between devices!</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Imagine a telephone switchboard operator who connects calls directly between people instead of making everyone share one phone line!</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Learning:</strong> Builds MAC address table by watching frames</li>
+                                <li><strong>Forwarding:</strong> Creates dedicated path between source and destination</li>
+                                <li><strong>Filtering:</strong> Only sends data to the intended port</li>
+                                <li><strong>Full-Duplex:</strong> Allows simultaneous send/receive</li>
+                            </ol>
+
+                            <div class="comparison-box">
+                                <h4>Switch vs Hub:</h4>
+                                <div class="comparison-grid">
+                                    <div class="comparison-item good">
+                                        <strong>Switch</strong>
+                                        <p>✓ Intelligent forwarding</p>
+                                        <p>✓ No collisions</p>
+                                        <p>✓ Full bandwidth per port</p>
+                                    </div>
+                                    <div class="comparison-item bad">
+                                        <strong>Hub</strong>
+                                        <p>✗ Broadcasts to all</p>
+                                        <p>✗ Collision domain</p>
+                                        <p>✗ Shared bandwidth</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Key Features:</h4>
+                                <ul>
+                                    <li>✓ Creates collision-free environment</li>
+                                    <li>✓ Full-duplex communication</li>
+                                    <li>✓ Wire-speed forwarding</li>
+                                    <li>✓ VLAN support for segmentation</li>
+                                    <li>✓ Much faster than hubs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="switchSimulation" class="simulation-area"></div>
+                            
+                            <div class="mode-selector">
+                                <label>
+                                    <input type="radio" name="switchMode" value="switch" checked onchange="switchDemo.setMode('switch')">
+                                    Switch Mode (Smart)
+                                </label>
+                                <label>
+                                    <input type="radio" name="switchMode" value="hub" onchange="switchDemo.setMode('hub')">
+                                    Hub Mode (Dumb)
+                                </label>
+                            </div>
+
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="switchDemo.sendFrame('PC1', 'PC2')">
+                                    <i class="fas fa-paper-plane"></i> PC1 → PC2
+                                </button>
+                                <button class="control-btn" onclick="switchDemo.sendFrame('PC3', 'PC4')">
+                                    <i class="fas fa-paper-plane"></i> PC3 → PC4
+                                </button>
+                                <button class="control-btn" onclick="switchDemo.simultaneousSend()">
+                                    <i class="fas fa-bolt"></i> Simultaneous Sends
+                                </button>
+                                <button class="control-btn reset-btn" onclick="switchDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="switch-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Frames Sent:</span>
+                                    <span class="stat-value" id="framesSent">0</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Collisions:</span>
+                                    <span class="stat-value" id="collisions">0</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Efficiency:</span>
+                                    <span class="stat-value" id="efficiency">100%</span>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Compare Switch vs Hub modes to see the difference!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-building"></i>
+                            <h4>Office LANs</h4>
+                            <p>Connecting computers in offices</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-database"></i>
+                            <h4>Data Centers</h4>
+                            <p>Server-to-server communication</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-wifi"></i>
+                            <h4>Access Layer</h4>
+                            <p>Connecting end devices and APs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+     ADD THESE SECTIONS AFTER SWITCH SECTION
+     IN index-enhanced.html (line ~350)
+     ============================================ -->
+
+        <!-- Section 4: Gateway -->
+        <section class="slide gateway-slide" id="gateway" data-section="4">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">All Layers (1-7)</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-door-open"></i>
+                        Gateway
+                    </h2>
+                    <p class="section-subtitle">The Universal Translator</p>
+                </div>
+
+                <div class="content-layout">
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a Gateway?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>Gateway</strong> is like a language translator at the United Nations! It allows networks that speak different "languages" (protocols) to communicate with each other.</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Imagine traveling from the USA to Japan. You need a translator who understands both English and Japanese, converts currency, and explains cultural differences. That's exactly what a Gateway does for networks!</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Receives Data:</strong> Gets data in one protocol format</li>
+                                <li><strong>Analyzes:</strong> Understands the source protocol structure</li>
+                                <li><strong>Converts:</strong> Translates to destination protocol format</li>
+                                <li><strong>Forwards:</strong> Sends converted data to destination</li>
+                            </ol>
+
+                            <div class="comparison-box">
+                                <h4>Gateway vs Router:</h4>
+                                <div class="comparison-grid">
+                                    <div class="comparison-item good">
+                                        <strong>Gateway</strong>
+                                        <p>✓ Protocol translation</p>
+                                        <p>✓ All OSI layers</p>
+                                        <p>✓ Complex conversion</p>
+                                    </div>
+                                    <div class="comparison-item">
+                                        <strong>Router</strong>
+                                        <p>• Only Layer 3</p>
+                                        <p>• No translation</p>
+                                        <p>• Same protocol</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Key Features:</h4>
+                                <ul>
+                                    <li>✓ Works at all 7 OSI layers</li>
+                                    <li>✓ Protocol conversion capability</li>
+                                    <li>✓ Data format translation</li>
+                                    <li>✓ Connects incompatible networks</li>
+                                    <li>✓ Can modify packet structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="gatewaySimulation" class="simulation-area"></div>
+                            
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="gatewayDemo.translate('HTTP', 'FTP')">
+                                    <i class="fas fa-exchange-alt"></i> HTTP → FTP
+                                </button>
+                                <button class="control-btn" onclick="gatewayDemo.translate('Email', 'SMS')">
+                                    <i class="fas fa-envelope"></i> Email → SMS
+                                </button>
+                                <button class="control-btn" onclick="gatewayDemo.translate('IPv4', 'IPv6')">
+                                    <i class="fas fa-network-wired"></i> IPv4 → IPv6
+                                </button>
+                                <button class="control-btn reset-btn" onclick="gatewayDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="translation-log">
+                                <h4><i class="fas fa-list"></i> Translation Log</h4>
+                                <div id="translationLog" class="log-content">
+                                    <div class="log-entry">Waiting for translation...</div>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Watch the Gateway translate between different protocols!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h4>Protocol Conversion</h4>
+                            <p>Email gateway (SMTP to Exchange)</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud Integration</h4>
+                            <p>On-premise to cloud services</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>VoIP Gateway</h4>
+                            <p>Traditional phone to IP networks</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-industry"></i>
+                            <h4>IoT Gateway</h4>
+                            <p>Sensor protocols to IP networks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Firewall -->
+        <section class="slide firewall-slide" id="firewall" data-section="5">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">Layers 3-7 (Network to Application)</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Firewall
+                    </h2>
+                    <p class="section-subtitle">Your Network's Security Guard</p>
+                </div>
+
+                <div class="content-layout">
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a Firewall?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>Firewall</strong> is like a security guard at a building entrance. It checks everyone trying to enter or leave based on strict rules!</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Think of a nightclub bouncer with a guest list. The bouncer checks IDs, looks for prohibited items, and only allows people who meet the criteria. Some people get VIP access, others are blocked entirely!</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Inspection:</strong> Examines incoming/outgoing packets</li>
+                                <li><strong>Rule Matching:</strong> Compares against security rules</li>
+                                <li><strong>Decision:</strong> Allow, deny, or log the traffic</li>
+                                <li><strong>Action:</strong> Forwards allowed packets, drops denied ones</li>
+                            </ol>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Key Features:</h4>
+                                <ul>
+                                    <li>✓ Packet filtering (IP, port, protocol)</li>
+                                    <li>✓ Stateful inspection (tracks connections)</li>
+                                    <li>✓ Application-level filtering</li>
+                                    <li>✓ Intrusion prevention</li>
+                                    <li>✓ Logging and monitoring</li>
+                                    <li>✓ NAT (Network Address Translation)</li>
+                                </ul>
+                            </div>
+
+                            <div class="comparison-box">
+                                <h4>Types of Firewalls:</h4>
+                                <div class="comparison-grid">
+                                    <div class="comparison-item">
+                                        <strong>Packet Filter</strong>
+                                        <p>Basic, fast</p>
+                                        <p>Layer 3-4</p>
+                                    </div>
+                                    <div class="comparison-item good">
+                                        <strong>Stateful</strong>
+                                        <p>Tracks connections</p>
+                                        <p>More secure</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="firewallSimulation" class="simulation-area"></div>
+                            
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="firewallDemo.sendPacket('192.168.1.10', '80', 'TCP')">
+                                    <i class="fas fa-globe"></i> Web Traffic (Port 80)
+                                </button>
+                                <button class="control-btn" onclick="firewallDemo.sendPacket('192.168.1.10', '22', 'TCP')">
+                                    <i class="fas fa-terminal"></i> SSH (Port 22)
+                                </button>
+                                <button class="control-btn" onclick="firewallDemo.sendPacket('10.0.0.5', '443', 'TCP')">
+                                    <i class="fas fa-lock"></i> HTTPS (Port 443)
+                                </button>
+                                <button class="control-btn" onclick="firewallDemo.sendPacket('8.8.8.8', '53', 'UDP')">
+                                    <i class="fas fa-server"></i> DNS (Port 53)
+                                </button>
+                                <button class="control-btn reset-btn" onclick="firewallDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="firewall-rules">
+                                <h4><i class="fas fa-clipboard-list"></i> Firewall Rules</h4>
+                                <div id="firewallRules" class="table-content">
+                                    <div class="table-row header">
+                                        <span>Source</span>
+                                        <span>Port</span>
+                                        <span>Action</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span>Any</span>
+                                        <span>80, 443</span>
+                                        <span class="allow">✓ ALLOW</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span>192.168.1.0/24</span>
+                                        <span>22</span>
+                                        <span class="deny">✗ DENY</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span>Any</span>
+                                        <span>53</span>
+                                        <span class="allow">✓ ALLOW</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="firewall-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Allowed:</span>
+                                    <span class="stat-value allow" id="allowedCount">0</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Blocked:</span>
+                                    <span class="stat-value deny" id="blockedCount">0</span>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Try different traffic types and see what gets allowed or blocked!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-building"></i>
+                            <h4>Enterprise Security</h4>
+                            <p>Protecting corporate networks</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-home"></i>
+                            <h4>Home Networks</h4>
+                            <p>Router built-in firewalls</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud Firewalls</h4>
+                            <p>AWS Security Groups, Azure NSG</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-desktop"></i>
+                            <h4>Host-Based</h4>
+                            <p>Windows Firewall, iptables</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: VPN -->
+        <section class="slide vpn-slide" id="vpn" data-section="6">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">Layers 2-3 (Data Link & Network)</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-lock"></i>
+                        VPN (Virtual Private Network)
+                    </h2>
+                    <p class="section-subtitle">Your Secret Tunnel</p>
+                </div>
+
+                <div class="content-layout">
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a VPN?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>VPN</strong> creates a secure, encrypted tunnel through the public internet, like having a private armored car driving through busy streets!</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Imagine sending a secret letter. Instead of sending it in a see-through envelope (regular internet), you put it in a locked safe (encryption), send it through a secure courier (tunnel), and only the recipient has the key to open it!</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Connection:</strong> Your device connects to VPN server</li>
+                                <li><strong>Encryption:</strong> Data is encrypted before sending</li>
+                                <li><strong>Tunneling:</strong> Encrypted data travels through secure tunnel</li>
+                                <li><strong>Decryption:</strong> VPN server decrypts and forwards data</li>
+                                <li><strong>Response:</strong> Reply comes back through same secure tunnel</li>
+                            </ol>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Key Features:</h4>
+                                <ul>
+                                    <li>✓ End-to-end encryption (AES-256)</li>
+                                    <li>✓ IP address masking</li>
+                                    <li>✓ Secure remote access</li>
+                                    <li>✓ Bypass geo-restrictions</li>
+                                    <li>✓ Privacy protection</li>
+                                    <li>✓ Multiple protocols (OpenVPN, WireGuard, IPSec)</li>
+                                </ul>
+                            </div>
+
+                            <div class="comparison-box">
+                                <h4>With vs Without VPN:</h4>
+                                <div class="comparison-grid">
+                                    <div class="comparison-item good">
+                                        <strong>With VPN</strong>
+                                        <p>✓ Encrypted traffic</p>
+                                        <p>✓ Hidden IP address</p>
+                                        <p>✓ Secure connection</p>
+                                    </div>
+                                    <div class="comparison-item bad">
+                                        <strong>Without VPN</strong>
+                                        <p>✗ Visible data</p>
+                                        <p>✗ Exposed IP</p>
+                                        <p>✗ Vulnerable</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="vpnSimulation" class="simulation-area"></div>
+                            
+                            <div class="mode-selector">
+                                <label>
+                                    <input type="radio" name="vpnMode" value="without" checked onchange="vpnDemo.setMode('without')">
+                                    Without VPN (Exposed)
+                                </label>
+                                <label>
+                                    <input type="radio" name="vpnMode" value="with" onchange="vpnDemo.setMode('with')">
+                                    With VPN (Secure)
+                                </label>
+                            </div>
+
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="vpnDemo.sendData('Login Credentials')">
+                                    <i class="fas fa-user-lock"></i> Send Login Data
+                                </button>
+                                <button class="control-btn" onclick="vpnDemo.sendData('Bank Details')">
+                                    <i class="fas fa-credit-card"></i> Send Banking Info
+                                </button>
+                                <button class="control-btn" onclick="vpnDemo.sendData('Personal Files')">
+                                    <i class="fas fa-file-alt"></i> Send Documents
+                                </button>
+                                <button class="control-btn reset-btn" onclick="vpnDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="vpn-info">
+                                <div class="info-row">
+                                    <span class="info-label">Your IP:</span>
+                                    <span class="info-value" id="yourIP">192.168.1.100</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Visible IP:</span>
+                                    <span class="info-value" id="visibleIP">192.168.1.100</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Encryption:</span>
+                                    <span class="info-value" id="encryption">None</span>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Toggle VPN on/off and see how your data is protected!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-laptop-house"></i>
+                            <h4>Remote Work</h4>
+                            <p>Secure access to company resources</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-wifi"></i>
+                            <h4>Public WiFi</h4>
+                            <p>Protection on untrusted networks</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Privacy</h4>
+                            <p>Hide browsing from ISP</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h4>Geo-Unblocking</h4>
+                            <p>Access region-locked content</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Subnet -->
+        <section class="slide subnet-slide" id="subnet" data-section="7">
+            <div class="container">
+                <div class="section-header">
+                    <div class="device-badge">Layer 3 - Network</div>
+                    <h2 class="section-title">
+                        <i class="fas fa-sitemap"></i>
+                        Sub Network (Subnet)
+                    </h2>
+                    <p class="section-subtitle">Divide and Conquer</p>
+                </div>
+
+                <div class="content-layout">
+                    <div class="explanation-panel">
+                        <h3><i class="fas fa-book-open"></i> What is a Subnet?</h3>
+                        <div class="explanation-content">
+                            <p>A <strong>Subnet</strong> is like dividing a large apartment building into separate floors and apartments. Each section has its own address range!</p>
+                            
+                            <div class="analogy-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Real-Life Analogy:</strong>
+                                    <p>Think of a company building: Floor 1 is Sales, Floor 2 is Engineering, Floor 3 is HR. Each floor has its own area (subnet), but they're all in the same building (network). This organization makes management easier!</p>
+                                </div>
+                            </div>
+
+                            <h4>How it Works:</h4>
+                            <ol class="step-list">
+                                <li><strong>Network Division:</strong> Split large network into smaller parts</li>
+                                <li><strong>IP Allocation:</strong> Assign IP ranges to each subnet</li>
+                                <li><strong>Subnet Mask:</strong> Defines network and host portions</li>
+                                <li><strong>Routing:</strong> Routers forward traffic between subnets</li>
+                            </ol>
+
+                            <div class="key-points">
+                                <h4><i class="fas fa-star"></i> Benefits of Subnetting:</h4>
+                                <ul>
+                                    <li>✓ Improved network performance</li>
+                                    <li>✓ Enhanced security (isolation)</li>
+                                    <li>✓ Efficient IP address usage</li>
+                                    <li>✓ Reduced broadcast traffic</li>
+                                    <li>✓ Easier network management</li>
+                                    <li>✓ Better organization</li>
+                                </ul>
+                            </div>
+
+                            <div class="comparison-box">
+                                <h4>Common Subnet Masks:</h4>
+                                <div class="subnet-examples">
+                                    <div class="subnet-item">
+                                        <strong>/24</strong>
+                                        <p>255.255.255.0</p>
+                                        <p>254 hosts</p>
+                                    </div>
+                                    <div class="subnet-item">
+                                        <strong>/16</strong>
+                                        <p>255.255.0.0</p>
+                                        <p>65,534 hosts</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-panel">
+                        <h3><i class="fas fa-gamepad"></i> Interactive Playground</h3>
+                        <div class="playground-content">
+                            <div id="subnetSimulation" class="simulation-area"></div>
+                            
+                            <div class="simulation-controls">
+                                <button class="control-btn" onclick="subnetDemo.calculateSubnet('192.168.1.0', 24)">
+                                    <i class="fas fa-calculator"></i> /24 Network
+                                </button>
+                                <button class="control-btn" onclick="subnetDemo.calculateSubnet('192.168.0.0', 16)">
+                                    <i class="fas fa-calculator"></i> /16 Network
+                                </button>
+                                <button class="control-btn" onclick="subnetDemo.showDivision()">
+                                    <i class="fas fa-project-diagram"></i> Show Division
+                                </button>
+                                <button class="control-btn reset-btn" onclick="subnetDemo.reset()">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="subnet-info">
+                                <h4><i class="fas fa-info-circle"></i> Subnet Information</h4>
+                                <div id="subnetDetails" class="subnet-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Network Address:</span>
+                                        <span class="detail-value" id="networkAddr">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Subnet Mask:</span>
+                                        <span class="detail-value" id="subnetMask">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">First Host:</span>
+                                        <span class="detail-value" id="firstHost">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Last Host:</span>
+                                        <span class="detail-value" id="lastHost">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Broadcast:</span>
+                                        <span class="detail-value" id="broadcast">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Total Hosts:</span>
+                                        <span class="detail-value" id="totalHosts">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Calculate subnet details and see network division!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications-section">
+                    <h3><i class="fas fa-briefcase"></i> Real-World Applications</h3>
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <i class="fas fa-building"></i>
+                            <h4>Department Separation</h4>
+                            <p>Sales, IT, HR in different subnets</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Security Zones</h4>
+                            <p>DMZ, internal, guest networks</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Performance</h4>
+                            <p>Reduce broadcast domains</p>
+                        </div>
+                        <div class="app-card">
+                            <i class="fas fa-tasks"></i>
+                            <h4>IP Management</h4>
+                            <p>Efficient address allocation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Controls -->
+        <div class="nav-controls">
+            <button class="nav-btn prev-btn" id="prevBtn">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <div class="slide-indicator">
+                <span class="current-slide" id="currentSlide">1</span>
+                <span>/</span>
+                <span class="total-slides">8</span>
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </main>
+
+    <button id="sidebarOpen">
+        <i class="fa fa-chevron-right"></i>
+    </button>
+    <p class="copywrite">Designed By <a href="https://minarulak.in/" target="_blank">Minarul Hoque</a></p>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="./js/animations.js"></script>
+    <script src="./js/simulations.js"></script>
+    <script src="./js/app.js?v=1"></script>
+</body>
+</html>
