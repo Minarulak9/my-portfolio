@@ -877,6 +877,22 @@ img { display: block; max-width: 100%; }
   color: var(--text-primary);
   letter-spacing: -0.01em;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.timeline-badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: rgba(255, 200, 60, 0.12);
+  color: #f5c842;
+  border: 1px solid rgba(245, 200, 66, 0.25);
 }
 
 .timeline-sub {
