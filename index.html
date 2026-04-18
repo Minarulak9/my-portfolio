@@ -24,8 +24,8 @@
   <meta property="og:site_name" content="Minarul Hoque — Full Stack Developer">
   <meta name="theme-color" content="#6ee7b7">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Minarul Hoque — Full Stack Developer with 3+ years building and shipping production systems — video streaming platforms, CRM/LMS, e-commerce — using React, Node.js, PHP, and AWS.">
-  <meta name="keywords" content="Minarul Hoque, Full Stack Developer, React, Node.js, PHP, AWS, Web Developer Kolkata, Technology Consultant">
+  <meta name="description" content="Minarul Hoque — Full Stack Developer with 3+ years building production systems using React, Node.js, PHP, and AWS. Video streaming, CRM/LMS, e-commerce. Open to full-time roles.">
+  <meta name="keywords" content="Minarul Hoque, Full Stack Developer, React, Node.js, PHP, AWS, Web Developer Kolkata, Video Streaming, CRM, LMS, E-commerce, Shopify">
   <meta name="author" content="Minarul Hoque">
   <link rel="canonical" href="https://minarulak.in">
 
@@ -33,12 +33,12 @@
   <meta property="og:description" content="Full Stack Developer building production-grade video streaming platforms, CRM/LMS systems, and e-commerce solutions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://minarulak.in">
-  <meta property="og:image" content="./assets/img/logo_black.png">
+  <meta property="og:image" content="https://minarulak.in/assets/img/logo_black.png">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Minarul Hoque — Full Stack Developer">
   <meta name="twitter:description" content="Full Stack Developer with 3+ years building production systems — video streaming, CRM/LMS, e-commerce.">
-  <meta name="twitter:image" content="./assets/img/logo_black.png">
+  <meta name="twitter:image" content="https://minarulak.in/assets/img/logo_black.png">
 
   <title>Minarul Hoque — Full Stack Developer | React · Node.js · AWS</title>
   <link rel="icon" href="./assets/img/logo_black.png">
@@ -97,8 +97,6 @@
       <a href="#hero"     class="active" id="nav-home">Home</a>
       <a href="#projects" id="nav-projects">Projects</a>
       <a href="#resume"   id="nav-resume">Résumé</a>
-      <a href="#about"    id="nav-about">About</a>
-      <a href="mailto:minarulh34@gmail.com" class="nav-contact-link" id="nav-contact">Contact</a>
     </nav>
     <a href="mailto:minarulh34@gmail.com" class="nav-hire-btn">Hire Me</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
@@ -115,6 +113,8 @@
     <a href="#about"    class="mobile-link">About</a>
     <a href="mailto:minarulh34@gmail.com" class="mobile-link mobile-hire">Hire Me</a>
   </div>
+
+  <main id="main-content">
 
   <!-- ================================================
        HERO — FULL WIDTH TWO-COLUMN
@@ -201,7 +201,8 @@
 
       <!-- NEW: Raykulam -->
       <article class="project-card" data-year="recent">
-        <img src="assets/img/projects/shaligram.webp" class="project-thumb" alt="Raykulam Wellness Video Platform" loading="lazy">
+        <span class="badge-hot">🔥</span>
+        <img src="assets/img/projects/raykulam.webp" class="project-thumb" alt="Raykulam Wellness Video Platform" loading="lazy">
         <div class="project-body">
           <div class="project-tags">
             <span class="project-tag">Next.js</span>
@@ -212,18 +213,23 @@
           <h3 class="project-title">Raykulam — Wellness Video Platform</h3>
           <p class="project-desc">Full-stack wellness streaming platform with HLS video (AWS S3, Lambda, MediaConvert, CloudFront), Razorpay auto-mandate subscriptions, and real-time WebSocket chat. Hybrid DB — MongoDB for video metadata; MySQL for users and transactions.</p>
           <div class="project-links">
-            <a href="assets/img/projects/shaligram.webp" class="project-link portfolio-lightbox"
+            <a href="assets/img/projects/raykulam.webp" class="project-link portfolio-lightbox"
                data-gallery="portfolioGallery"
                title="Raykulam — Full-stack wellness streaming platform. HLS video via AWS (S3, Lambda, MediaConvert, CloudFront), Razorpay auto-mandate subscriptions, real-time WebSocket chat. Hybrid DB: MongoDB + MySQL. Backend on EC2, frontend on Vercel."
                id="proj-raykulam-preview">
               <i class="bi bi-arrows-fullscreen"></i> Preview
             </a>
+            <a href="https://raykulam.com/" target="_blank" rel="noopener" class="project-link" id="proj-shaligram-live">
+              <i class="bi bi-box-arrow-up-right"></i> Live
+            </a>
+            
           </div>
         </div>
       </article>
 
       <!-- Shaligram Healing -->
       <article class="project-card" data-year="recent">
+        <span class="badge-hot">🔥</span>
         <img src="assets/img/projects/shaligram.webp" class="project-thumb" alt="Shaligram Healing Video Platform" loading="lazy">
         <div class="project-body">
           <div class="project-tags">
@@ -250,7 +256,8 @@
 
       <!-- NEW: Elytespark CRM & LMS -->
       <article class="project-card" data-year="recent">
-        <img src="assets/img/projects/admin2.png" class="project-thumb" alt="Elytespark CRM LMS Platform" loading="lazy">
+        <span class="badge-hot">🔥</span>
+        <img src="assets/img/projects/elytespark.webp" class="project-thumb" alt="Elytespark CRM LMS Platform" loading="lazy">
         <div class="project-body">
           <div class="project-tags">
             <span class="project-tag">PHP</span>
@@ -261,7 +268,7 @@
           <h3 class="project-title">Elytespark — Multi-Role CRM &amp; LMS</h3>
           <p class="project-desc">Multi-panel platform (admin, sales, employee) for lead management, course creation, and LMS with automated certification PDF generation on course completion.</p>
           <div class="project-links">
-            <a href="assets/img/projects/admin2.png" class="project-link portfolio-lightbox"
+            <a href="assets/img/projects/elytespark.webp" class="project-link portfolio-lightbox"
                data-gallery="portfolioGallery"
                title="Elytespark — Multi-panel CRM & LMS. Admin, Sales, Employee panels. Lead management, course creation, automated certification PDF generation. Built with PHP, JavaScript, MySQL, REST APIs, Multi-role Auth, Google Drive API."
                id="proj-elytespark-preview">
@@ -316,6 +323,32 @@
               <i class="bi bi-arrows-fullscreen"></i> Preview
             </a>
             <a href="https://explomart.com/" target="_blank" rel="noopener" class="project-link" id="proj-explomart-live">
+              <i class="bi bi-box-arrow-up-right"></i> Live
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ecoumbrix -->
+      <article class="project-card" data-year="recent">
+        <img src="assets/img/projects/ecoumbrix.webp" class="project-thumb" alt="Ecoumbrix Shopify store" loading="lazy">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">Liquid</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">CSS</span>
+          </div>
+          <h3 class="project-title">Ecoumbrix — Shopify Store</h3>
+          <p class="project-desc">Landing page and online store built on Shopify for a Canadian sustainability startup. Clean, conversion-focused brand experience with product presentation tailored to eco-conscious consumers.</p>
+          <div class="project-links">
+            <a href="assets/img/projects/ecoumbrix.webp" class="project-link portfolio-lightbox"
+               data-gallery="portfolioGallery"
+               title="Ecoumbrix — Shopify store for a Canadian sustainability startup. Clean, conversion-focused brand experience with product presentation tailored to eco-conscious consumers."
+               id="proj-ecoumbrix-preview">
+              <i class="bi bi-arrows-fullscreen"></i> Preview
+            </a>
+            <a href="https://ecoumbrix.com/" target="_blank" rel="noopener" class="project-link" id="proj-ecoumbrix-live">
               <i class="bi bi-box-arrow-up-right"></i> Live
             </a>
           </div>
@@ -645,7 +678,7 @@
   <section id="about" class="section" aria-labelledby="about-heading">
     <div class="fade-up">
       <span class="section-label">Expertise</span>
-      <h3 class="sub-heading">Technical Skills</h3>
+      <h2 class="sub-heading" id="about-heading">Technical Skills</h2>
 
       <div class="skills-categories" id="skills-container">
 
@@ -724,7 +757,7 @@
     <!-- Interests -->
     <div class="fade-up">
       <span class="section-label">Beyond Work</span>
-      <h3 class="sub-heading">Interests</h3>
+      <h2 class="sub-heading">Interests</h2>
 
       <div class="interests-grid">
         <div class="interest-chip"><i class="ri-brain-line"></i><span>Solving Hard Problems</span></div>
@@ -763,12 +796,14 @@
     </div>
   </div>
 
+  </main>
+
   <!-- ================================================
        FOOTER
        ================================================ -->
   <footer>
     <span class="footer-copy">
-      &copy; <span id="footer-year"></span> Minarul Hoque &mdash; All rights reserved.
+      &copy; 2023 Minarul Hoque
     </span>
     <div class="footer-social" aria-label="Social links">
       <a href="https://github.com/minarulak9/" target="_blank" rel="noopener" aria-label="GitHub">

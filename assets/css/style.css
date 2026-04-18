@@ -16,8 +16,8 @@
   --border-hover: rgba(255,255,255,0.12);
 
   --text-primary:   #ededee;
-  --text-secondary: #8a8a9a;
-  --text-muted:     #4d4d5a;
+  --text-secondary: #cfcfdf;
+  --text-muted:     #adadb8;
 
   --accent:       #00eaff;
   --accent-dim:   rgba(110,231,183,0.10);
@@ -629,12 +629,28 @@ img { display: block; max-width: 100%; }
   gap: 24px;
 }
 
+.badge-hot {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  line-height: 1;
+}
+
 .project-card {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  padding: 18px;
+  padding: 2px;
   background: linear-gradient(180deg, rgba(70,120,239,0.14), rgba(255,255,255,0.02) 42%, rgba(255,255,255,0.01));
   border: 1px solid var(--border);
   border-radius: calc(var(--radius-lg) + 2px);
@@ -653,7 +669,7 @@ img { display: block; max-width: 100%; }
 }
 
 .project-thumb {
-  width: 100%; aspect-ratio: 16/10;
+  width: 100%; aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: calc(var(--radius-lg) - 2px);
   border: 1px solid rgba(255,255,255,0.05);
@@ -663,7 +679,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 18px 4px 4px;
+  padding: 15px;
 }
 
 .project-tags {
