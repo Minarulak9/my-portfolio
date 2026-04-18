@@ -56,6 +56,9 @@
   <!-- Stylesheet -->
   <link href="./assets/css/style.css" rel="stylesheet">
 
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,13 +92,15 @@
        STICKY TOP NAV
        ================================================ -->
   <header id="topnav" role="banner" aria-label="Site header">
-    <span class="nav-brand">Minarul<span>.</span></span>
+    <a href="#hero" class="nav-brand" aria-label="Home"><img src="./assets/img/logo.webp" alt="Minarul Hoque" class="nav-logo"></a>
     <nav aria-label="Main navigation">
       <a href="#hero"     class="active" id="nav-home">Home</a>
       <a href="#projects" id="nav-projects">Projects</a>
       <a href="#resume"   id="nav-resume">Résumé</a>
       <a href="#about"    id="nav-about">About</a>
+      <a href="mailto:minarulh34@gmail.com" class="nav-contact-link" id="nav-contact">Contact</a>
     </nav>
+    <a href="mailto:minarulh34@gmail.com" class="nav-hire-btn">Hire Me</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -108,6 +113,7 @@
     <a href="#projects" class="mobile-link">Projects</a>
     <a href="#resume"   class="mobile-link">Résumé</a>
     <a href="#about"    class="mobile-link">About</a>
+    <a href="mailto:minarulh34@gmail.com" class="mobile-link mobile-hire">Hire Me</a>
   </div>
 
   <!-- ================================================
@@ -126,34 +132,14 @@
 
       <h1 class="hero-name">Minarul <span>Hoque</span></h1>
 
-      <p class="hero-title">Full Stack Developer &amp; Technology Consultant</p>
+      <p class="hero-title"><span class="typewriter-text" aria-live="polite"></span><span class="typewriter-cursor" aria-hidden="true"></span></p>
 
       <p class="hero-bio">
-        Full Stack Developer with 3+ years building and shipping production
-        systems — video streaming platforms, CRM/LMS, and e-commerce — using
-        React, Node.js, PHP, and AWS. I turn complex business problems into
-        performant, scalable digital products.
+        Full Stack Developer with 3+ years of hands-on experience shipping
+        production systems — video streaming, CRM/LMS, and e-commerce — using
+        React, Node.js, PHP, and AWS. Looking for a full-time role where I can
+        contribute, grow, and build things that matter.
       </p>
-
-      <!-- Stats inline — below biography -->
-      <div class="hero-stats-inline" aria-label="Highlights">
-        <div class="hero-stat-inline">
-          <div class="hero-stat-inline-num">3<span>+</span></div>
-          <div class="hero-stat-inline-label">Years Exp.</div>
-        </div>
-        <div class="hero-stat-inline">
-          <div class="hero-stat-inline-num">15<span>+</span></div>
-          <div class="hero-stat-inline-label">Websites</div>
-        </div>
-        <div class="hero-stat-inline">
-          <div class="hero-stat-inline-num">10<span>K+</span></div>
-          <div class="hero-stat-inline-label">Active Users</div>
-        </div>
-        <div class="hero-stat-inline">
-          <div class="hero-stat-inline-num">&#8377;5<span>L+</span></div>
-          <div class="hero-stat-inline-label">Rev. / Month</div>
-        </div>
-      </div>
 
       <div class="hero-actions">
         <a href="#projects" class="btn-primary-outline" id="cta-projects">
@@ -210,11 +196,6 @@
       <p class="section-sub">Production systems I've built — from wellness platforms to enterprise CRMs.</p>
     </div>
 
-    <div class="projects-filters fade-up" role="group" aria-label="Filter projects">
-      <button class="filter-btn filter-active" data-filter="all" id="filter-all">All</button>
-      <button class="filter-btn" data-filter="recent" id="filter-recent">2024–2026</button>
-      <button class="filter-btn" data-filter="earlier" id="filter-earlier">2021–2024</button>
-    </div>
 
     <div class="projects-grid fade-up" id="projects-grid">
 
@@ -547,59 +528,6 @@
           </div>
         </div>
 
-        <div class="resume-group">
-          <p class="resume-group-title">Certifications &amp; Awards</p>
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <span class="timeline-period">May 2024</span>
-              <h3 class="timeline-title">Advanced React by META</h3>
-              <p class="timeline-sub">Coursera</p>
-              <a href="https://www.coursera.org/account/accomplishments/verify/6EQVH9NAKYWT"
-                 target="_blank" rel="noopener" class="timeline-link" id="cert-react">
-                View Certificate <i class="bi bi-arrow-up-right"></i>
-              </a>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-period">Jan 2023</span>
-              <h3 class="timeline-title">JavaScript — by Jonas Schmedtmann</h3>
-              <p class="timeline-sub">Udemy</p>
-              <a href="https://www.udemy.com/certificate/UC-7837aae9-2ee6-4dfe-b808-28809e4ac2af/"
-                 target="_blank" rel="noopener" class="timeline-link" id="cert-js">
-                View Certificate <i class="bi bi-arrow-up-right"></i>
-              </a>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-period">Apr 2022</span>
-              <h3 class="timeline-title">JavaScript Algorithms &amp; Data Structures</h3>
-              <p class="timeline-sub">freeCodeCamp</p>
-              <a href="https://www.freecodecamp.org/certification/minarulak/javascript-algorithms-and-data-structures"
-                 target="_blank" rel="noopener" class="timeline-link" id="cert-dsa">
-                View Certificate <i class="bi bi-arrow-up-right"></i>
-              </a>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-period">Jun 2021</span>
-              <h3 class="timeline-title">Technical Support Fundamentals</h3>
-              <p class="timeline-sub">Google · Coursera</p>
-              <a href="https://www.coursera.org/account/accomplishments/certificate/AGX5PRBLR6MS"
-                 target="_blank" rel="noopener" class="timeline-link" id="cert-google">
-                View Certificate <i class="bi bi-arrow-up-right"></i>
-              </a>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-period">2022</span>
-              <h3 class="timeline-title">JIS Tech 2k22 — 1st Position</h3>
-              <p class="timeline-sub">Annual Tech Fest, JIS College of Engineering</p>
-            </div>
-
-          </div>
-        </div>
-
       </div><!-- left col -->
 
       <!-- Right: Experience -->
@@ -645,7 +573,67 @@
         </div>
 
       </div><!-- right col -->
-
+      <div class="resume-group resume-group-wide">
+        <p class="resume-group-title">Certifications &amp; Awards</p>
+        <div class="certifications-grid">
+          <article class="cert-card">
+            <div class="cert-card-top">
+              <span class="timeline-period">May 2024</span>
+              <span class="cert-card-type">Certificate</span>
+            </div>
+            <h3 class="timeline-title">Advanced React by META</h3>
+            <p class="timeline-sub">Coursera</p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/6EQVH9NAKYWT"
+               target="_blank" rel="noopener" class="timeline-link cert-card-link" id="cert-react">
+              View Certificate <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+          <article class="cert-card">
+            <div class="cert-card-top">
+              <span class="timeline-period">Jan 2023</span>
+              <span class="cert-card-type">Certificate</span>
+            </div>
+            <h3 class="timeline-title">JavaScript &mdash; by Jonas Schmedtmann</h3>
+            <p class="timeline-sub">Udemy</p>
+            <a href="https://www.udemy.com/certificate/UC-7837aae9-2ee6-4dfe-b808-28809e4ac2af/"
+               target="_blank" rel="noopener" class="timeline-link cert-card-link" id="cert-js">
+              View Certificate <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+          <article class="cert-card">
+            <div class="cert-card-top">
+              <span class="timeline-period">Apr 2022</span>
+              <span class="cert-card-type">Certificate</span>
+            </div>
+            <h3 class="timeline-title">JavaScript Algorithms &amp; Data Structures</h3>
+            <p class="timeline-sub">freeCodeCamp</p>
+            <a href="https://www.freecodecamp.org/certification/minarulak/javascript-algorithms-and-data-structures"
+               target="_blank" rel="noopener" class="timeline-link cert-card-link" id="cert-dsa">
+              View Certificate <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+          <article class="cert-card">
+            <div class="cert-card-top">
+              <span class="timeline-period">Jun 2021</span>
+              <span class="cert-card-type">Certificate</span>
+            </div>
+            <h3 class="timeline-title">Technical Support Fundamentals</h3>
+            <p class="timeline-sub">Google &middot; Coursera</p>
+            <a href="https://www.coursera.org/account/accomplishments/certificate/AGX5PRBLR6MS"
+               target="_blank" rel="noopener" class="timeline-link cert-card-link" id="cert-google">
+              View Certificate <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+          <article class="cert-card cert-card-award">
+            <div class="cert-card-top">
+              <span class="timeline-period">2022</span>
+              <span class="cert-card-type">Award</span>
+            </div>
+            <h3 class="timeline-title">JIS Tech 2k22 &mdash; 1st Position</h3>
+            <p class="timeline-sub">Annual Tech Fest, JIS College of Engineering</p>
+          </article>
+        </div>
+      </div>
     </div><!-- .resume-layout -->
   </section>
 
@@ -655,69 +643,6 @@
        ABOUT + SKILLS + INTERESTS
        ================================================ -->
   <section id="about" class="section" aria-labelledby="about-heading">
-
-    <!-- About person -->
-    <div class="fade-up">
-      <span class="section-label">About</span>
-      <h2 class="section-heading" id="about-heading">Who Am I?</h2>
-      <p class="section-sub">A builder who cares about craft, performance, and real-world impact.</p>
-    </div>
-
-    <div class="about-no-img fade-up">
-
-      <!-- Left: bio text -->
-      <div class="about-bio-col">
-        <h3 class="about-role">Full Stack Developer &amp; Technology Consultant</h3>
-        <p class="about-bio-text">
-          I specialise in building and shipping production-grade digital products — from wellness video
-          streaming platforms to multi-role CRM/LMS systems. With expertise in React, Next.js, Node.js,
-          PHP, and AWS, I bridge the gap between business goals and scalable technical architecture.
-          I've improved system performance by 30–40% and helped platforms reach real revenue milestones.
-        </p>
-        <p class="about-bio-text">
-          I'm currently pursuing my MCA at Adamas University while freelancing and consulting for startups
-          and growing businesses. I care deeply about code quality, speed, and solving real problems that
-          actually matter to users.
-        </p>
-      </div>
-
-      <!-- Right: cards grid -->
-      <div class="about-cards">
-        <div class="about-card">
-          <span class="about-card-key">Location</span>
-          <span class="about-card-val">West Bengal, India</span>
-        </div>
-        <div class="about-card">
-          <span class="about-card-key">Age</span>
-          <span class="about-card-val" id="about-age"></span>
-        </div>
-        <div class="about-card">
-          <span class="about-card-key">Degree</span>
-          <span class="about-card-val">BCA &amp; MCA</span>
-        </div>
-        <div class="about-card">
-          <span class="about-card-key">Status</span>
-          <span class="about-card-val accent">Available for work</span>
-        </div>
-        <div class="about-card about-card--wide">
-          <span class="about-card-key">Email</span>
-          <span class="about-card-val">
-            <a href="mailto:minarulh34@gmail.com" class="text-inherit">minarulh34@gmail.com</a>
-          </span>
-        </div>
-        <div class="about-card about-card--wide">
-          <span class="about-card-key">Phone</span>
-          <span class="about-card-val">
-            <a href="tel:+919002624058" class="text-inherit">+91 9002624058</a>
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="inner-divider">
-
-    <!-- Skills — tag cloud, NO percentages -->
     <div class="fade-up">
       <span class="section-label">Expertise</span>
       <h3 class="sub-heading">Technical Skills</h3>
@@ -881,12 +806,6 @@
 
     /* ---- Sticky topnav ---- */
     const topnav = document.getElementById('topnav');
-    const heroEl = document.getElementById('hero');
-    function onScroll() {
-      const bottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
-      topnav.classList.toggle('visible', bottom < 60);
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
 
     /* ---- Active nav highlight ---- */
     const navLinks = {
@@ -928,27 +847,24 @@
     if (closeBtn)  closeBtn.addEventListener('click', closeMobileNav);
     document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMobileNav));
 
-    /* ---- Smooth scroll ---- */
+    /* ---- Lenis smooth scroll ---- */
+    const lenis = new Lenis({
+      duration: 1.25,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+    function rafLoop(time) { lenis.raf(time); requestAnimationFrame(rafLoop); }
+    requestAnimationFrame(rafLoop);
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        e.preventDefault();
+        lenis.scrollTo(href, { offset: -80, duration: 1.25 });
       });
     });
 
-    /* ---- Project filter ---- */
-    const filterBtns  = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('filter-active'));
-        btn.classList.add('filter-active');
-        const f = btn.dataset.filter;
-        projectCards.forEach(card => {
-          card.style.display = (f === 'all' || card.dataset.year === f) ? '' : 'none';
-        });
-      });
-    });
 
     /* ---- Fade-up on scroll ---- */
     const fadeEls = document.querySelectorAll('.fade-up');
@@ -1075,5 +991,61 @@
     window.addEventListener('resize', resize);
   })();
   </script>
+
+  <script>
+  (function () {
+    'use strict';
+    const textEl = document.querySelector('.typewriter-text');
+    if (!textEl) return;
+
+    const ROLES = [
+      'Full Stack Developer',
+      'React & Node.js Engineer',
+      'Open to Full-Time Roles',
+      'Building for Scale',
+    ];
+
+    const TYPE_MIN = 55, TYPE_MAX = 120;
+    const ERASE_MIN = 30, ERASE_MAX = 60;
+    const PAUSE_END = 1800, PAUSE_START = 280;
+
+    let roleIndex = 0, charIndex = 0, isErasing = false, isPaused = false;
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function tick() {
+      const current = ROLES[roleIndex];
+      if (!isErasing && !isPaused) {
+        charIndex++;
+        textEl.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          isPaused = true;
+          setTimeout(() => { isPaused = false; isErasing = true; tick(); }, PAUSE_END);
+          return;
+        }
+        setTimeout(tick, rand(TYPE_MIN, TYPE_MAX));
+      } else if (isErasing && !isPaused) {
+        charIndex--;
+        textEl.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          isErasing = false; isPaused = true;
+          setTimeout(() => {
+            roleIndex = (roleIndex + 1) % ROLES.length;
+            isPaused = false; tick();
+          }, PAUSE_START);
+          return;
+        }
+        setTimeout(tick, rand(ERASE_MIN, ERASE_MAX));
+      }
+    }
+
+    setTimeout(tick, 600);
+  })();
+  </script>
 </body>
 </html>
+
+
+
