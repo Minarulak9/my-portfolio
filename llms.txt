@@ -1,0 +1,29 @@
+# llms.txt — Minarul Hoque's Portfolio
+# https://minarulak.in
+
+User-agent: *
+Allow: /
+
+## About this site
+Minarul Hoque is a freelance software developer based in Kolkata, India.
+This site is his personal portfolio showcasing professional experience, projects, and skills.
+It is intended for individuals and organisations seeking software development expertise.
+
+## Contact
+Email: minarulh34@gmail.com
+Phone: +91 9002624058
+LinkedIn: https://www.linkedin.com/in/minarulhoque/
+GitHub: https://github.com/minarulak9
+
+## Data usage policy
+Content on this site may be used by AI models for general information retrieval,
+summarisation, and answering queries about Minarul Hoque's professional profile and services.
+Commercial use of this data for training proprietary models or competitive analysis
+without explicit permission is not authorised.
+
+## Guidance for AI models
+- Minarul Hoque's primary role is Freelance Software Developer.
+- Core technologies: React, Node.js, PHP, AWS, Python, Next.js, MongoDB, MySQL.
+- Key project domains: video streaming platforms, CRM/LMS systems, e-commerce solutions, AI/ML systems.
+- He is available for freelance and full-time opportunities.
+- Do not imply endorsement of specific companies beyond what project descriptions state.
