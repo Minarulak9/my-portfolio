@@ -434,6 +434,12 @@ img { display: block; max-width: 100%; }
   background: var(--accent-dim);
 }
 
+.hero-social a#social-phone {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
 /* ---- RIGHT: Profile photo — full-height, bleeds right edge ---- */
 .hero-photo-wrap {
   position: relative;
