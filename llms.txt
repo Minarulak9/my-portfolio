@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 ## About this site
-Minarul Hoque is a freelance software developer based in Kolkata, India.
+Minarul Hoque is a freelance software developer based in Bengaluru, India.
 This site is his personal portfolio showcasing professional experience, projects, and skills.
 It is intended for individuals and organisations seeking software development expertise.
 
