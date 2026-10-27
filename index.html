@@ -278,10 +278,43 @@
 
     <div class="projects-grid fade-up" id="projects-grid">
 
+      <!-- Invoice Studio -->
+      <article class="project-card" data-year="recent">
+        <span class="badge-hot">🔥</span>
+        <img src="assets/img/projects/invoice_img1.webp" class="project-thumb" alt="Invoice Studio — free GST invoice generator with live invoice preview" loading="lazy">
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">PWA</span>
+            <span class="project-tag">Offline-first</span>
+          </div>
+          <h3 class="project-title">Invoice Studio — Free GST Invoice Generator</h3>
+          <p class="project-desc">Free, no-sign-up GST invoicing app for Indian freelancers and small businesses — auto CGST/SGST/IGST split, tax invoices, quotations, bills of supply and export invoices under LUT, UPI scan-to-pay QR, six customisable templates, and watermark-free PDF export. Fully client-side: data never leaves the browser.</p>
+          <div class="project-links">
+            <a href="assets/img/projects/invoice_img1.webp" class="project-link portfolio-lightbox"
+               data-gallery="portfolioGallery"
+               title="Invoice Studio — GST invoicing, simplified. Invoice editor with live preview, automatic CGST/SGST/IGST calculation, HSN/SAC codes, amount in words, and professional templates."
+               id="proj-invoice-preview">
+              <i class="bi bi-arrows-fullscreen"></i> Preview
+            </a>
+            <a href="assets/img/projects/invoice_img2.webp" class="portfolio-lightbox"
+               data-gallery="portfolioGallery"
+               title="Invoice Studio — Dashboard. Invoiced, received and outstanding totals, recent documents, income &amp; expense overview, quick actions, and saved customers." hidden></a>
+            <a href="assets/img/projects/invoice_img3.webp" class="portfolio-lightbox"
+               data-gallery="portfolioGallery"
+               title="Invoice Studio — Create. Manage. Get paid. Template gallery with custom logo, colours and fields, payment tracking, backup &amp; restore, and installable PWA." hidden></a>
+            <a href="https://invoice.zynitex.com/" target="_blank" rel="noopener" class="project-link" id="proj-invoice-live">
+              <i class="bi bi-box-arrow-up-right"></i> Live
+            </a>
+          </div>
+        </div>
+      </article>
+
       <!-- Regalia -->
       <article class="project-card" data-year="recent">
         <span class="badge-hot">🔥</span>
-        <img src="assets/img/projects/regalia1.webp" class="project-thumb" alt="Regalia Legacy House luxury e-commerce platform" loading="lazy">
+        <img src="assets/img/projects/regalia.webp" class="project-thumb project-thumb--showcase" alt="Regalia Legacy House — luxury storefront and admin dashboard showcase" loading="lazy">
         <div class="project-body">
           <div class="project-tags">
             <span class="project-tag">Next.js</span>
@@ -293,12 +326,15 @@
           <h3 class="project-title">Regalia — Luxury E-commerce &amp; CMS</h3>
           <p class="project-desc">Full-stack luxury home &amp; hospitality brand — storefront, checkout, editorial journal, and a complete admin CMS with media focal-point cropping. Dual payment gateways (Stripe + Razorpay) and automated PDF invoicing.</p>
           <div class="project-links">
-            <a href="assets/img/projects/regalia1.webp" class="project-link portfolio-lightbox"
+            <a href="assets/img/projects/regalia.webp" class="project-link portfolio-lightbox"
                data-gallery="portfolioGallery"
-               title="Regalia — Luxury retail &amp; hospitality platform. Storefront hero. Built with Next.js 16, React 19, Prisma, Stripe &amp; Razorpay payments, PDFKit invoicing, AWS S3 media, TipTap editorial CMS."
+               title="Regalia — Luxury retail &amp; hospitality platform. A beautiful storefront and a powerful dashboard for collections, orders, and content. Built with Next.js 16, React 19, Prisma, Stripe &amp; Razorpay payments, PDFKit invoicing, AWS S3 media, TipTap editorial CMS."
                id="proj-regalia-preview">
               <i class="bi bi-arrows-fullscreen"></i> Preview
             </a>
+            <a href="assets/img/projects/regalia1.webp" class="portfolio-lightbox"
+               data-gallery="portfolioGallery"
+               title="Regalia — Storefront hero. &ldquo;For the home you&rsquo;ve built &amp; for the generations to come.&rdquo;" hidden></a>
             <a href="assets/img/projects/regalia2.webp" class="portfolio-lightbox"
                data-gallery="portfolioGallery"
                title="Regalia — Handloom Linen collection page. Server-rendered catalogue with category filters and rich product detail." hidden></a>
@@ -312,7 +348,7 @@
       <!-- Restaurant SaaS -->
       <article class="project-card" data-year="recent">
         <span class="badge-hot">🔥</span>
-        <img src="assets/img/projects/restaurant.webp" class="project-thumb" alt="Multi-tenant restaurant management SaaS platform" loading="lazy">
+        <img src="assets/img/projects/zynibill-showcase.webp" class="project-thumb project-thumb--showcase" alt="Zynibill — multi-tenant restaurant management and billing SaaS showcase" loading="lazy">
         <div class="project-body">
           <div class="project-tags">
             <span class="project-tag">Next.js</span>
@@ -321,39 +357,18 @@
             <span class="project-tag">Prisma</span>
             <span class="project-tag">Redis</span>
           </div>
-          <h3 class="project-title">Restaurant SaaS — Multi-Tenant Platform</h3>
-          <p class="project-desc">Multi-tenant restaurant management SaaS — real-time kitchen display, QR table ordering, staff and menu management, plus a super-admin portal for plans, billing, and webhooks. BullMQ + Redis job queues and Socket.IO realtime.</p>
+          <h3 class="project-title">Zynibill — Restaurant SaaS Platform</h3>
+          <p class="project-desc">Multi-tenant restaurant management &amp; billing SaaS — visual table management, dine-in/takeaway/delivery orders, real-time kitchen display, GST billing with cash/card/UPI, sales analytics, and staff management, plus a super-admin portal for plans and webhooks. BullMQ + Redis job queues and Socket.IO realtime.</p>
           <div class="project-links">
-            <a href="assets/img/projects/restaurant.webp" class="project-link portfolio-lightbox"
+            <a href="assets/img/projects/zynibill-showcase.webp" class="project-link portfolio-lightbox"
                data-gallery="portfolioGallery"
-               title="Restaurant SaaS — Multi-tenant management platform. Next.js + Express, Prisma/MySQL, Socket.IO kitchen display, QR table ordering, BullMQ + Redis queues, Prometheus metrics, Docker, CI/CD."
+               title="Zynibill — Complete restaurant management: tables, orders, menu, billing &amp; payments, analytics dashboard, and staff. Next.js + Express, Prisma/MySQL, Socket.IO kitchen display, QR table ordering, BullMQ + Redis queues, Prometheus metrics, Docker, CI/CD."
                id="proj-restaurant-preview">
               <i class="bi bi-arrows-fullscreen"></i> Preview
             </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Kristive -->
-      <article class="project-card" data-year="recent">
-        <span class="badge-hot">🔥</span>
-        <img src="assets/img/projects/kristive.webp" class="project-thumb" alt="Kristive online learning platform" loading="lazy">
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">Next.js</span>
-            <span class="project-tag">Express</span>
-            <span class="project-tag">Prisma</span>
-            <span class="project-tag">PostgreSQL</span>
-          </div>
-          <h3 class="project-title">Kristive — Online Learning Platform</h3>
-          <p class="project-desc">Online learning platform with role-based portals for admin, teacher, student, and parent. Admin-managed lesson categories, multi-video course playlists, and automated certificates.</p>
-          <div class="project-links">
-            <a href="assets/img/projects/kristive.webp" class="project-link portfolio-lightbox"
+            <a href="assets/img/projects/restaurant.webp" class="portfolio-lightbox"
                data-gallery="portfolioGallery"
-               title="Kristive — Education marketplace. Marketing site plus admin / teacher / student / parent portals. Next.js 16, React 19, Express, Prisma/Postgres, Razorpay, Jodit rich-text, certificate generation."
-               id="proj-kristive-preview">
-              <i class="bi bi-arrows-fullscreen"></i> Preview
-            </a>
+               title="Zynibill — Multi-tenant architecture. Live Socket.IO kitchen display (KDS) built on Next.js, Express, Prisma and Redis." hidden></a>
           </div>
         </div>
       </article>
@@ -378,7 +393,7 @@
                id="proj-sidhu-preview">
               <i class="bi bi-arrows-fullscreen"></i> Preview
             </a>
-            <a href="https://portfolio-frontend-eight-lime.vercel.app/" target="_blank" rel="noopener" class="project-link" id="proj-sidhu-live">
+            <a href="https://www.yuvrajsidhu.com/" target="_blank" rel="noopener" class="project-link" id="proj-sidhu-live">
               <i class="bi bi-box-arrow-up-right"></i> Live
             </a>
           </div>
@@ -526,7 +541,7 @@
       <!-- NEW: Elytespark CRM & LMS -->
       <article class="project-card" data-year="recent">
         <span class="badge-hot">🔥</span>
-        <img src="assets/img/projects/elytespark.webp" class="project-thumb" alt="Elytespark CRM LMS Platform" loading="lazy">
+        <img src="assets/img/projects/elytespark-lms1.webp" class="project-thumb project-thumb--showcase" alt="ElyteSpark LMS — student dashboard with courses, AI mock interviews, and career tools" loading="lazy">
         <div class="project-body">
           <div class="project-tags">
             <span class="project-tag">PHP</span>
@@ -537,12 +552,15 @@
           <h3 class="project-title">Elytespark — Multi-Role CRM &amp; LMS</h3>
           <p class="project-desc">Multi-panel platform (admin, sales, employee) for lead management, course creation, and LMS with automated certification PDF generation on course completion.</p>
           <div class="project-links">
-            <a href="assets/img/projects/elytespark.webp" class="project-link portfolio-lightbox"
+            <a href="assets/img/projects/elytespark-lms1.webp" class="project-link portfolio-lightbox"
                data-gallery="portfolioGallery"
-               title="Elytespark — Multi-panel CRM & LMS. Admin, Sales, Employee panels. Lead management, course creation, automated certification PDF generation. Built with PHP, JavaScript, MySQL, REST APIs, Multi-role Auth, Google Drive API."
+               title="ElyteSpark LMS — Student portal. Structured courses, AI mock interviews, resume &amp; portfolio builder, ATS checker, job listings, progress tracking, and certificates."
                id="proj-elytespark-preview">
               <i class="bi bi-arrows-fullscreen"></i> Preview
             </a>
+            <a href="assets/img/projects/elytespark.webp" class="portfolio-lightbox"
+               data-gallery="portfolioGallery"
+               title="ElyteSpark CRM — Admin panel. Revenue tracking, company leads, payments, and BDE leaderboard. Built with PHP, JavaScript, MySQL, REST APIs, Multi-role Auth, Google Drive API." hidden></a>
           </div>
         </div>
       </article>
